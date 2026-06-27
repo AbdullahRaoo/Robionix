@@ -1,15 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-
-const NAV = [
-  { label: "Products", href: "/products" },
-  { label: "Services", href: "/services" },
-  { label: "Company", href: "/company" },
-  { label: "Contact", href: "/contact" },
-];
+import HeaderInner from "./HeaderInner";
 
 type POM = { id: string; label: string; val: string; color: string; a: [number, number]; b: [number, number]; l: [number, number] };
 
@@ -28,22 +21,6 @@ export default function CinematicHero() {
   const tl = useRef<gsap.core.Timeline | null>(null);
   const ready = useRef(false);
   const raf = useRef(0);
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
-
-  // sync state with the theme the inline script already applied
-  useEffect(() => {
-    const cur = document.documentElement.getAttribute("data-theme");
-    if (cur === "light" || cur === "dark") setTheme(cur);
-  }, []);
-
-  const toggleTheme = () => {
-    setTheme((t) => {
-      const next = t === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", next);
-      try { localStorage.setItem("robionix-theme", next); } catch {}
-      return next;
-    });
-  };
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -150,27 +127,9 @@ export default function CinematicHero() {
         </span>
       </div>
 
-      {/* Header */}
+      {/* Header (drops in via gsap; nav shared with subpages) */}
       <header className="cine-header absolute inset-x-0 top-0 z-50">
-        <div className="mx-auto flex h-24 max-w-[1320px] items-center justify-between px-7">
-          <img src={theme === "dark" ? "/assets/brand/logo-wide-light.png" : "/assets/brand/logo-wide.png"} alt="Robionix Technologies" className="h-12 w-auto lg:h-14" />
-          <nav className="hidden items-center gap-10 text-[15px] font-medium lg:flex">
-            {NAV.map((n) => (
-              <Link key={n.href} href={n.href} className="t-soft transition-colors hover:[color:var(--ink)]">{n.label}</Link>
-            ))}
-          </nav>
-          <div className="flex items-center gap-4">
-            <span className="hidden h-6 w-px bg-[var(--border)] lg:block" />
-            <button type="button" onClick={toggleTheme} aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`} className="cine-glass flex h-11 w-11 items-center justify-center rounded-full transition-transform duration-200 hover:-translate-y-0.5">
-              {theme === "dark" ? (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="t-ink"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19" strokeLinecap="round" /></svg>
-              ) : (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="t-ink"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" strokeLinejoin="round" /></svg>
-              )}
-            </button>
-            <a href="/contact" className="cine-cta inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-petrol-950 transition-transform duration-200 hover:-translate-y-0.5">Book a meeting</a>
-          </div>
-        </div>
+        <HeaderInner />
       </header>
 
       {/* Intro loader */}

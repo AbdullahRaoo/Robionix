@@ -3,7 +3,7 @@ import Link from "next/link";
 const COLS = [
   { h: "Services", links: [["Computer Vision", "/services/computer-vision"], ["ERP Development", "/services/erp-development"], ["Robotics", "/services/robotics-automation"], ["Embedded", "/services/embedded-systems"]] },
   { h: "Products", links: [["MagicQC", "/magicqc"], ["RMES", "/products/rmes"], ["KMES", "/products/kmes"], ["Bib Recognition", "/products/bib-recognition"], ["Smart Helmet", "/products/smart-helmet"]] },
-  { h: "Company", links: [["About", "/company"], ["Contact", "/contact"]] },
+  { h: "Company", links: [["About", "/company"], ["Insights", "/insights"], ["Careers", "/careers"], ["Contact", "/contact"]] },
 ];
 
 export default function SiteFooter() {
