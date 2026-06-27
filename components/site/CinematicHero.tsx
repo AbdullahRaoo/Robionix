@@ -5,10 +5,10 @@ import Link from "next/link";
 import { gsap } from "gsap";
 
 const NAV = [
-  { label: "MagicQC", href: "/magicqc" },
-  { label: "Platform", href: "/platform" },
-  { label: "Work", href: "/work" },
+  { label: "Products", href: "/products" },
+  { label: "Services", href: "/services" },
   { label: "Company", href: "/company" },
+  { label: "Contact", href: "/contact" },
 ];
 
 type POM = { id: string; label: string; val: string; color: string; a: [number, number]; b: [number, number]; l: [number, number] };

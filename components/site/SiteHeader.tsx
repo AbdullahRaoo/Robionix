@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useState } from "react";
 
 const NAV = [
-  { label: "MagicQC", href: "/magicqc" },
-  { label: "Platform", href: "/platform" },
-  { label: "Work", href: "/work" },
+  { label: "Products", href: "/products" },
+  { label: "Services", href: "/services" },
   { label: "Company", href: "/company" },
+  { label: "Contact", href: "/contact" },
 ];
 
 function toggleTheme() {

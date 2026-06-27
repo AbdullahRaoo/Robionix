@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const COLS = [
-  { h: "Platform", links: [["Vision AI", "/platform"], ["ERP / MES", "/platform"], ["Robotics", "/platform"], ["Embedded", "/platform"]] },
-  { h: "Products", links: [["MagicQC", "/magicqc"], ["RMES", "/work"], ["KMES", "/work"], ["Bib Recognition", "/work"], ["Smart Helmet", "/work"]] },
-  { h: "Company", links: [["About", "/company"], ["Team", "/company"], ["Contact", "/contact"]] },
+  { h: "Services", links: [["Computer Vision", "/services/computer-vision"], ["ERP Development", "/services/erp-development"], ["Robotics", "/services/robotics-automation"], ["Embedded", "/services/embedded-systems"]] },
+  { h: "Products", links: [["MagicQC", "/magicqc"], ["RMES", "/products/rmes"], ["KMES", "/products/kmes"], ["Bib Recognition", "/products/bib-recognition"], ["Smart Helmet", "/products/smart-helmet"]] },
+  { h: "Company", links: [["About", "/company"], ["Contact", "/contact"]] },
 ];
 
 export default function SiteFooter() {
