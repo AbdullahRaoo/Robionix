@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+/* ============================================================
+   ROBIONIX — brand color scales (Tailwind utilities). Petrol #003C54 + Amber #F0A800.
+   ============================================================ */
+@theme {
+  --color-petrol-50: #f1f7f9;
+  --color-petrol-100: #e3eff3;
+  --color-petrol-200: #bfd9e3;
+  --color-petrol-300: #8fbdce;
+  --color-petrol-400: #5a9db6;
+  --color-petrol-500: #2a7e9e;
+  --color-petrol-600: #156585;
+  --color-petrol-700: #0b4f6c;
+  --color-petrol-800: #003c54;
+  --color-petrol-900: #002a3b;
+  --color-petrol-950: #00202e;
+
+  --color-amber-50: #fff8e6;
+  --color-amber-100: #fff0c7;
+  --color-amber-200: #ffe29a;
+  --color-amber-300: #ffd16b;
+  --color-amber-400: #ffbe3d;
+  --color-amber-500: #fca800;
+  --color-amber-600: #f0a800;
+  --color-amber-700: #d89000;
+  --color-amber-800: #b37a00;
+  --color-amber-900: #8a5e00;
+
+  --color-paper-50: #faf8f4;
+  --color-paper-100: #f3f0ea;
+  --color-paper-200: #e8e3d9;
+  --color-paper-300: #d8d2c6;
+  --color-ink-400: #8a969d;
+  --color-ink-500: #65727a;
+  --color-ink-700: #3d4a52;
+  --color-ink-900: #14222a;
+
+  --color-success-50: #e8f5ee;
+  --color-success-600: #1f8a4c;
+  --color-success-700: #15683a;
+  --color-danger-50: #fbeae8;
+  --color-danger-600: #c0392b;
+
+  --font-sans: var(--font-geist), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============================================================
+   CINEMATIC THEME TOKENS — applied on <html data-theme>. Studied from the logo:
+   dark = deep LIT TEAL-PETROL; light = warm paper. Every section inherits these.
+   ============================================================ */
+:root, [data-theme="dark"] {
+  --hb: #041219;
+  --ink: #f4f7f8;
+  --ink-soft: rgba(244, 247, 248, 0.74);
+  --ink-faint: rgba(244, 247, 248, 0.46);
+  --ghost: rgba(126, 184, 204, 0.05);
+  --border: rgba(140, 190, 205, 0.13);
+  --accent: #ffbe3d;
+  --kicker: #7fa9bb;
+  --header: linear-gradient(180deg, rgba(5, 24, 33, 0.86), rgba(5, 24, 33, 0));
+  --card-bg: radial-gradient(135% 115% at 50% -12%, #17536b 0%, #0b3445 42%, #072430 72%, #04151d 100%);
+  --card-shadow: 0 50px 130px -25px rgba(0,0,0,.85), 0 24px 80px -16px rgba(14,98,134,.38), 0 0 0 1px rgba(140,190,205,.14), inset 0 1px 0 rgba(160,205,220,.22), inset 0 -3px 50px rgba(0,0,0,.45);
+  --cardborder: rgba(150, 200, 215, 0.22);
+  --panel: rgba(150, 200, 215, 0.05);
+  --stage-bg: radial-gradient(120% 120% at 50% 0%, #0a2e3e 0%, #061d27 55%, #03121a 100%);
+  --stage-shadow: 0 50px 110px -30px rgba(0,0,0,.85), inset 0 1px 0 rgba(140,190,205,.14);
+  --glass: linear-gradient(135deg, rgba(150,200,215,.12), rgba(150,200,215,.02));
+  --glass-border: rgba(150, 200, 215, 0.18);
+  --glass-shadow: 0 24px 50px -12px rgba(0,0,0,.7), inset 0 1px 1px rgba(255,255,255,.16);
+  --glow1: #0e6286;
+  --glow2: #f0a800;
+}
+[data-theme="light"] {
+  --hb: #ece8df;
+  --ink: #13212a;
+  --ink-soft: rgba(19, 33, 42, 0.74);
+  --ink-faint: rgba(19, 33, 42, 0.5);
+  --ghost: rgba(0, 60, 84, 0.05);
+  --border: rgba(0, 60, 84, 0.12);
+  --accent: #0b4f6c;
+  --kicker: #156585;
+  --header: linear-gradient(180deg, rgba(247, 245, 239, 0.9), rgba(247, 245, 239, 0));
+  --card-bg: linear-gradient(180deg, #ffffff 0%, #f4f1ea 100%);
+  --card-shadow: 0 50px 110px -30px rgba(0,42,59,.26), 0 0 0 1px rgba(0,60,84,.07), inset 0 1px 0 #fff;
+  --cardborder: rgba(0, 60, 84, 0.1);
+  --panel: rgba(255, 255, 255, 0.7);
+  --stage-bg: linear-gradient(180deg, #ffffff 0%, #f3f0e9 100%);
+  --stage-shadow: 0 40px 90px -30px rgba(0,42,59,.24), inset 0 1px 0 #fff;
+  --glass: linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,255,255,.62));
+  --glass-border: rgba(0, 60, 84, 0.1);
+  --glass-shadow: 0 24px 50px -16px rgba(0,42,59,.2), inset 0 1px 1px #fff;
+  --glow1: #a7cdda;
+  --glow2: #f0a800;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--hb);
+    color: var(--ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  ::selection {
+    background: var(--color-amber-300);
+    color: #04151d;
+  }
+  h1, h2, h3 {
+    color: var(--ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+}
+
+/* ---- shared cinematic utilities (used across all sections) ---- */
+.t-ink { color: var(--ink); }
+.t-soft { color: var(--ink-soft); }
+.t-faint { color: var(--ink-faint); }
+.t-accent { color: var(--accent); }
+.cine-systext { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+.cine-glass {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+.cine-cta {
+  background: linear-gradient(180deg, #ffc53d 0%, #f0a800 100%);
+  box-shadow: 0 1px 0 rgba(255,255,255,.4) inset, 0 14px 28px -8px rgba(240,168,0,.5);
+}
+.cine-stage { background: var(--stage-bg); box-shadow: var(--stage-shadow); border: 1px solid var(--border); }
+.cine-ghost { color: var(--ghost); }
+.cine-grain {
+  position: absolute; inset: 0; pointer-events: none; z-index: 60; opacity: .055; mix-blend-mode: overlay;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%25" height="100%25" filter="url(%23n)"/></svg>');
+}
+[data-theme="light"] .cine-grain { mix-blend-mode: multiply; opacity: .04; }
+
+/* intro silver text — theme aware. Use background-image (NOT the background
+   shorthand, which would reset background-clip back to border-box and show a solid box). */
+.cine-silver {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transform: translateZ(0);
+}
+:root .cine-silver, [data-theme="dark"] .cine-silver {
+  background-image: linear-gradient(180deg, #ffffff 0%, #9fb0b8 100%);
+  filter: drop-shadow(0 14px 26px rgba(0,0,0,.45));
+}
+[data-theme="light"] .cine-silver {
+  background-image: linear-gradient(180deg, #13212a 0%, #5f6f77 100%);
+  filter: drop-shadow(0 12px 22px rgba(0,42,59,.16));
+}
+
+.cine-init { opacity: 0; }
+.cine-vignette {
+  position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse 95% 85% at 50% 42%, transparent 42%, rgba(0,0,0,.5) 100%);
+}
+[data-theme="light"] .cine-vignette {
+  background: radial-gradient(ellipse 95% 85% at 50% 42%, transparent 50%, rgba(0,42,59,.1) 100%);
+}
+.cine-card {
+  position: absolute; top: 5.5vh; left: 5vw; right: 5vw; bottom: 5.5vh; border-radius: 26px;
+  background: var(--card-bg); box-shadow: var(--card-shadow); border: 1px solid var(--cardborder);
+  overflow: hidden; z-index: 5; visibility: hidden;
+}
+.cine-header {
+  transform: translateY(-118%); opacity: 0;
+  background: var(--header); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.cine-intro-1 { opacity: 0; }
+.cine-intro-2 { clip-path: inset(0 100% 0 0); }
+.cine-scan { opacity: 0; }
+.cine-ready .cine-scan { animation: cineScan 4.4s cubic-bezier(.4,0,.2,1) infinite; }
+@media (prefers-reduced-motion: reduce) { .cine-ready .cine-scan { animation: none; opacity: .35; } }
+
+@keyframes cineScan {
+  0% { transform: translateY(-8%); opacity: 0; }
+  12% { opacity: 1; } 88% { opacity: 1; }
+  100% { transform: translateY(118%); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
