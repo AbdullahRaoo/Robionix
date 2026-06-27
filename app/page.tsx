@@ -1,9 +1,8 @@
 import CinematicHero from "@/components/site/CinematicHero";
-import Capabilities from "@/components/site/Capabilities";
 import MagicQCShowcase from "@/components/site/MagicQCShowcase";
-import RMES from "@/components/site/RMES";
-import SelectedWork from "@/components/site/SelectedWork";
-import Team from "@/components/site/Team";
+import ProductsHome from "@/components/site/ProductsHome";
+import Capabilities from "@/components/site/Capabilities";
+import Impact from "@/components/site/Impact";
 import ContactCTA from "@/components/site/ContactCTA";
 import SiteFooter from "@/components/site/SiteFooter";
 
@@ -12,11 +11,10 @@ export default function Home() {
     <>
       <main className="overflow-x-hidden">
         <CinematicHero />
-        <Capabilities />
         <MagicQCShowcase />
-        <RMES />
-        <SelectedWork />
-        <Team />
+        <ProductsHome />
+        <Capabilities />
+        <Impact />
         <ContactCTA />
       </main>
       <SiteFooter />

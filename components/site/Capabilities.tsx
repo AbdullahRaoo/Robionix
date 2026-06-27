@@ -1,6 +1,7 @@
+import Link from "next/link";
 import Reveal from "./Reveal";
 
-type Cap = { tag: string; title: string; body: string; icon: React.ReactNode; span?: string; featured?: boolean };
+type Cap = { tag: string; title: string; body: string; icon: React.ReactNode; href: string; span?: string; featured?: boolean };
 
 const I = {
   vision: (
@@ -24,12 +25,12 @@ const I = {
 };
 
 const CAPS: Cap[] = [
-  { tag: "Vision AI", featured: true, span: "lg:col-span-2 lg:row-span-2", icon: I.vision, title: "Computer vision that reads the physical world", body: "Deep-learning systems that measure, detect and sort in real time. MagicQC reads every garment point-of-measure to the millimetre; our marathon bib engine (YOLO + OCR) segregates thousands of race photos automatically." },
-  { tag: "ERP / MES", span: "lg:col-span-2", icon: I.erp, title: "Manufacturing ERP, built for the floor", body: "RMES & KMES replace SAP/Oracle for textile, knitwear, sports and surgical plants, yarn to delivery, in one system." },
-  { tag: "Robotics", icon: I.robot, title: "Robotics & automation", body: "Custom robotic cells tuned for accuracy and throughput." },
-  { tag: "Embedded", icon: I.chip, title: "Embedded & IoT", body: "Concept to silicon. The Smart Helmet: no helmet, no ignition." },
-  { tag: "Automation", span: "lg:col-span-2", icon: I.gear, title: "Industrial automation", body: "Workflow and machine automation that adapts to your existing line: real-time data collection, less paperwork, optimised maintenance." },
-  { tag: "VR", icon: I.vr, title: "VR experiences", body: "Immersive training and simulation." },
+  { tag: "Vision AI", featured: true, span: "lg:col-span-2 lg:row-span-2", href: "/services/computer-vision", icon: I.vision, title: "Computer vision that reads the physical world", body: "Deep-learning systems that measure, detect and sort in real time. MagicQC reads every garment point-of-measure to the millimetre; our marathon bib engine (YOLO + OCR) segregates thousands of race photos automatically." },
+  { tag: "ERP / MES", span: "lg:col-span-2", href: "/services/erp-development", icon: I.erp, title: "Manufacturing ERP, built for the floor", body: "RMES & KMES replace SAP/Oracle for textile, knitwear, sports and surgical plants, yarn to delivery, in one system." },
+  { tag: "Robotics", href: "/services/robotics-automation", icon: I.robot, title: "Robotics & automation", body: "Custom robotic cells tuned for accuracy and throughput." },
+  { tag: "Embedded", href: "/services/embedded-systems", icon: I.chip, title: "Embedded & IoT", body: "Concept to silicon. The Smart Helmet: no helmet, no ignition." },
+  { tag: "Automation", span: "lg:col-span-2", href: "/services/industrial-automation", icon: I.gear, title: "Industrial automation", body: "Workflow and machine automation that adapts to your existing line: real-time data collection, less paperwork, optimised maintenance." },
+  { tag: "VR", href: "/services/vr", icon: I.vr, title: "VR experiences", body: "Immersive training and simulation." },
 ];
 
 export default function Capabilities() {
@@ -48,17 +49,18 @@ export default function Capabilities() {
       <div className="mt-14 grid auto-rows-[minmax(180px,auto)] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {CAPS.map((c, i) => (
           <Reveal key={c.tag} delay={i * 70} className={c.span ?? ""}>
-            <article className="cine-glass group relative flex h-full flex-col overflow-hidden rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1">
+            <Link href={c.href} className="cine-glass group relative flex h-full flex-col overflow-hidden rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1">
               <div className="mb-5 flex items-center gap-3">
                 <span className="t-accent h-9 w-9 shrink-0">{c.icon}</span>
                 <span className="font-mono text-[10px] uppercase tracking-[0.18em] t-faint">{c.tag}</span>
               </div>
               <h3 className={`cine-systext font-bold leading-snug t-ink ${c.featured ? "text-2xl" : "text-lg"}`}>{c.title}</h3>
               <p className={`mt-3 t-soft ${c.featured ? "text-base" : "text-sm"}`}>{c.body}</p>
+              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium t-accent">Explore <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span></span>
               {c.featured && (
                 <span aria-hidden className="pointer-events-none absolute -bottom-16 -right-10 h-44 w-44 rounded-full opacity-40" style={{ background: "radial-gradient(circle,var(--glow1),transparent 70%)" }} />
               )}
-            </article>
+            </Link>
           </Reveal>
         ))}
       </div>
