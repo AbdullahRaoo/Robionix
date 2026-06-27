@@ -1,6 +1,7 @@
 import Reveal from "./Reveal";
+import VideoThumb from "./VideoThumb";
 
-type Work = { tag: string; title: string; body: string; img: string; featured?: boolean };
+type Work = { tag: string; title: string; body: string; img: string; video?: string; featured?: boolean };
 
 const WORK: Work[] = [
   {
@@ -21,6 +22,7 @@ const WORK: Work[] = [
     title: "Smart Helmet",
     body: "The bike won't start unless the helmet is worn. Over-speed sensing, accident detection and emergency location alerts. Developed with NUTECH.",
     img: "/assets/work/smart-helmet.webp",
+    video: "/assets/video/smart-helmet.mp4",
   },
   {
     tag: "ERPNext",
@@ -34,8 +36,14 @@ function Card({ w, featured }: { w: Work; featured?: boolean }) {
   return (
     <article className={`cine-glass group flex h-full flex-col overflow-hidden rounded-2xl ${featured ? "lg:flex-row" : ""}`}>
       <div className={`relative overflow-hidden ${featured ? "lg:w-3/5" : ""}`}>
-        <img src={w.img} alt={w.title} className={`w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] ${featured ? "h-64 lg:h-full" : "h-48"}`} />
-        <span aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(180deg,transparent 55%,rgba(4,18,25,.35))" }} />
+        {w.video ? (
+          <VideoThumb src={w.video} poster={w.img} imgClass={`w-full object-cover ${featured ? "h-64 lg:h-full" : "h-48"}`} />
+        ) : (
+          <>
+            <img src={w.img} alt={w.title} className={`w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] ${featured ? "h-64 lg:h-full" : "h-48"}`} />
+            <span aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(180deg,transparent 55%,rgba(4,18,25,.35))" }} />
+          </>
+        )}
       </div>
       <div className={`flex flex-col p-6 ${featured ? "lg:w-2/5 lg:justify-center lg:p-9" : ""}`}>
         <span className="font-mono text-[10px] uppercase tracking-[0.18em] t-accent">{w.tag}</span>
