@@ -5,17 +5,21 @@ import RMES from "@/components/site/RMES";
 import SelectedWork from "@/components/site/SelectedWork";
 import Team from "@/components/site/Team";
 import ContactCTA from "@/components/site/ContactCTA";
+import SiteFooter from "@/components/site/SiteFooter";
 
 export default function Home() {
   return (
-    <main className="overflow-x-hidden">
-      <CinematicHero />
-      <Capabilities />
-      <MagicQCShowcase />
-      <RMES />
-      <SelectedWork />
-      <Team />
-      <ContactCTA />
-    </main>
+    <>
+      <main className="overflow-x-hidden">
+        <CinematicHero />
+        <Capabilities />
+        <MagicQCShowcase />
+        <RMES />
+        <SelectedWork />
+        <Team />
+        <ContactCTA />
+      </main>
+      <SiteFooter />
+    </>
   );
 }

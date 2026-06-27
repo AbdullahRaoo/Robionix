@@ -15,10 +15,10 @@ export default function ContactCTA() {
             Book a working session with our engineers. We&apos;ll map the highest-ROI automation on your line, from vision QC to a full manufacturing ERP.
           </p>
           <div className="relative mt-9 flex flex-wrap items-center justify-center gap-3">
-            <a href="#" className="cine-cta inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-petrol-950 transition-transform duration-200 hover:-translate-y-0.5">
+            <a href="/contact" className="cine-cta inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-petrol-950 transition-transform duration-200 hover:-translate-y-0.5">
               Book a meeting <span aria-hidden>→</span>
             </a>
-            <a href="#" className="cine-glass inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium t-ink transition-transform duration-200 hover:-translate-y-0.5">
+            <a href="mailto:awaisfrombit@gmail.com" className="cine-glass inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium t-ink transition-transform duration-200 hover:-translate-y-0.5">
               Email us
             </a>
           </div>

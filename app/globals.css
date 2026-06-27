@@ -121,6 +121,10 @@
   }
 }
 
+/* theme-driven show/hide (no JS flash): correct logo + toggle icon per theme */
+[data-theme="light"] .on-dark { display: none; }
+[data-theme="dark"] .on-light { display: none; }
+
 /* ---- shared cinematic utilities (used across all sections) ---- */
 .t-ink { color: var(--ink); }
 .t-soft { color: var(--ink-soft); }

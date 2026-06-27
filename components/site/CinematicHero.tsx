@@ -1,7 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { gsap } from "gsap";
+
+const NAV = [
+  { label: "MagicQC", href: "/magicqc" },
+  { label: "Platform", href: "/platform" },
+  { label: "Work", href: "/work" },
+  { label: "Company", href: "/company" },
+];
 
 type POM = { id: string; label: string; val: string; color: string; a: [number, number]; b: [number, number]; l: [number, number] };
 
@@ -147,8 +155,8 @@ export default function CinematicHero() {
         <div className="mx-auto flex h-24 max-w-[1320px] items-center justify-between px-7">
           <img src={theme === "dark" ? "/assets/brand/logo-wide-light.png" : "/assets/brand/logo-wide.png"} alt="Robionix Technologies" className="h-12 w-auto lg:h-14" />
           <nav className="hidden items-center gap-10 text-[15px] font-medium lg:flex">
-            {["Platform", "Vision AI", "MagicQC", "Company"].map((n) => (
-              <a key={n} href="#" className="t-soft transition-colors hover:[color:var(--ink)]">{n}</a>
+            {NAV.map((n) => (
+              <Link key={n.href} href={n.href} className="t-soft transition-colors hover:[color:var(--ink)]">{n.label}</Link>
             ))}
           </nav>
           <div className="flex items-center gap-4">
@@ -160,7 +168,7 @@ export default function CinematicHero() {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="t-ink"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" strokeLinejoin="round" /></svg>
               )}
             </button>
-            <a href="#contact" className="cine-cta inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-petrol-950 transition-transform duration-200 hover:-translate-y-0.5">Book a meeting</a>
+            <a href="/contact" className="cine-cta inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-petrol-950 transition-transform duration-200 hover:-translate-y-0.5">Book a meeting</a>
           </div>
         </div>
       </header>
@@ -253,10 +261,10 @@ export default function CinematicHero() {
         </div>
 
         <div className="cine-hero-el cine-init relative mt-10 flex flex-wrap items-center justify-center gap-3">
-          <a href="#contact" className="cine-cta inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-petrol-950 transition-transform duration-200 hover:-translate-y-0.5">
+          <a href="/contact" className="cine-cta inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-petrol-950 transition-transform duration-200 hover:-translate-y-0.5">
             Book a meeting <span aria-hidden>→</span>
           </a>
-          <a href="#magicqc" className="cine-glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium t-ink transition-transform duration-200 hover:-translate-y-0.5">
+          <a href="/magicqc" className="cine-glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium t-ink transition-transform duration-200 hover:-translate-y-0.5">
             See MagicQC in action
           </a>
         </div>
