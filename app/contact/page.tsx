@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SiteHeader from "@/components/site/SiteHeader";
 import SiteFooter from "@/components/site/SiteFooter";
 import Reveal from "@/components/site/Reveal";
+import ContactForm from "@/components/site/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact — Robionix Technologies",
@@ -62,17 +63,7 @@ export default function ContactPage() {
 
         <section className="mx-auto max-w-[760px] px-6 pb-28">
           <Reveal>
-            <form className="cine-glass flex flex-col gap-4 rounded-2xl p-7 lg:p-9" aria-label="Contact form">
-              <h2 className="cine-systext text-xl font-bold t-ink">Send a message</h2>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <input placeholder="Name" className="rounded-lg border bg-transparent px-4 py-3 text-sm t-ink outline-none placeholder:[color:var(--ink-faint)] focus:[border-color:var(--accent)]" style={{ borderColor: "var(--border)" }} />
-                <input placeholder="Company" className="rounded-lg border bg-transparent px-4 py-3 text-sm t-ink outline-none placeholder:[color:var(--ink-faint)] focus:[border-color:var(--accent)]" style={{ borderColor: "var(--border)" }} />
-              </div>
-              <input placeholder="Email" type="email" className="rounded-lg border bg-transparent px-4 py-3 text-sm t-ink outline-none placeholder:[color:var(--ink-faint)] focus:[border-color:var(--accent)]" style={{ borderColor: "var(--border)" }} />
-              <textarea placeholder="What would you like to automate?" rows={4} className="resize-none rounded-lg border bg-transparent px-4 py-3 text-sm t-ink outline-none placeholder:[color:var(--ink-faint)] focus:[border-color:var(--accent)]" style={{ borderColor: "var(--border)" }} />
-              <button type="button" className="cine-cta mt-1 inline-flex items-center justify-center gap-2 self-start rounded-full px-7 py-3 text-sm font-semibold text-petrol-950 transition-transform duration-200 hover:-translate-y-0.5">Send message <span aria-hidden>→</span></button>
-              <p className="font-mono text-[10px] uppercase tracking-wider t-faint">Form is UI-only for now; wire to email on launch.</p>
-            </form>
+            <ContactForm />
           </Reveal>
         </section>
       </main>

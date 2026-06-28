@@ -29,7 +29,7 @@ export default function CursorTracker() {
     const onLeave = () => { el.style.opacity = "0"; shown = false; };
 
     const loop = () => {
-      x += (tx - x) * 0.22; y += (ty - y) * 0.22;
+      x += (tx - x) * 0.32; y += (ty - y) * 0.32;
       el.style.transform = `translate3d(${x}px,${y}px,0) translate(-50%,-50%)`;
       raf = requestAnimationFrame(loop);
     };

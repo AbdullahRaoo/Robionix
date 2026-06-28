@@ -27,7 +27,7 @@ export default function CinematicHero() {
 
     const ctx = gsap.context(() => {
       if (reduce) {
-        gsap.set(".cine-card", { visibility: "visible", yPercent: 0, top: 0, left: 0, right: 0, bottom: 0, borderRadius: 0 });
+        gsap.set(".cine-card", { visibility: "visible", yPercent: 0, scale: 1, borderRadius: 0 });
         gsap.set(".cine-header", { clearProps: "transform", opacity: 1 });
         gsap.set([".cine-stagewrap", ".cine-hero-el", ".cine-badge", ".cine-ghostword", ".cine-kp", ".cine-pomlabel"], { autoAlpha: 1, x: 0, y: 0, scale: 1, rotationX: 0 });
         gsap.set(".cine-line-draw", { strokeDashoffset: 0 });
@@ -45,7 +45,7 @@ export default function CinematicHero() {
         centerOffset = Math.round(window.innerHeight / 2 - (r.top + r.height / 2));
       }
 
-      gsap.set(".cine-card", { visibility: "visible", yPercent: 118 });
+      gsap.set(".cine-card", { visibility: "visible", yPercent: 118, scale: 0.9 });
       gsap.set(".cine-intro-1", { autoAlpha: 0, scale: 0.86, rotationX: -22, filter: "blur(20px)", transformPerspective: 900, transformOrigin: "50% 50%" });
       gsap.set(".cine-stagewrap", { autoAlpha: 0, y: centerOffset, rotationX: 34, scale: 0.92, transformPerspective: 1300, transformOrigin: "50% 30%" });
       gsap.set([".cine-hero-el", ".cine-ghostword"], { autoAlpha: 0, y: 24 });
@@ -66,7 +66,7 @@ export default function CinematicHero() {
         .to({}, { duration: 0.7 })
         .to(".cine-intro", { autoAlpha: 0, scale: 1.08, filter: "blur(14px)", duration: 0.9, ease: "power2.inOut" })
         .to(".cine-card", { yPercent: 0, duration: 1.3, ease: "expo.out" }, "-=0.35")
-        .to(".cine-card", { top: 0, left: 0, right: 0, bottom: 0, borderRadius: 0, duration: 1.0, ease: "power3.inOut" }, "-=0.15")
+        .to(".cine-card", { scale: 1, borderRadius: 0, duration: 1.0, ease: "power3.inOut" }, "-=0.15")
         .to(".cine-ghostword", { autoAlpha: 1, y: 0, duration: 1.0 }, "-=0.4")
         // shirt screen flips into the CENTRE of the screen
         .to(".cine-stagewrap", { autoAlpha: 1, rotationX: 0, scale: 1, duration: 1.4, ease: "expo.out" }, "-=0.7")

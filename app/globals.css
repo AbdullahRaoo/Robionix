@@ -181,10 +181,13 @@ main section { content-visibility: auto; contain-intrinsic-size: auto 720px; }
 [data-theme="light"] .cine-vignette {
   background: radial-gradient(ellipse 95% 85% at 50% 42%, transparent 50%, rgba(0,42,59,.1) 100%);
 }
+/* Full-screen surface; the "slide up + fill" is done with transform only
+   (translate + scale), never animating inset (which thrashes layout on low-end). */
 .cine-card {
-  position: absolute; top: 5.5vh; left: 5vw; right: 5vw; bottom: 5.5vh; border-radius: 26px;
+  position: absolute; inset: 0; border-radius: 26px;
   background: var(--card-bg); box-shadow: var(--card-shadow); border: 1px solid var(--cardborder);
   overflow: hidden; z-index: 5; visibility: hidden;
+  transform-origin: 50% 50%; will-change: transform;
 }
 .cine-header {
   transform: translateY(-118%); opacity: 0;
@@ -202,12 +205,7 @@ main section { content-visibility: auto; contain-intrinsic-size: auto 720px; }
   transition: opacity .3s ease, scale .18s var(--ease-out-quint);
   will-change: transform; filter: drop-shadow(0 0 4px rgba(240,168,0,.45));
 }
-.cursor-reticle path { transition: transform .2s var(--ease-out-quint); }
-.cursor-reticle.cursor-lock { scale: 1.4; }
-.cursor-reticle.cursor-lock .cr-tl { transform: translate(-2px,-2px); }
-.cursor-reticle.cursor-lock .cr-tr { transform: translate(2px,-2px); }
-.cursor-reticle.cursor-lock .cr-br { transform: translate(2px,2px); }
-.cursor-reticle.cursor-lock .cr-bl { transform: translate(-2px,2px); }
+.cursor-reticle.cursor-lock { scale: 1.3; }
 .cursor-reticle.cursor-down { scale: .82; }
 @media (hover: none), (pointer: coarse) { .cursor-reticle { display: none !important; } }
 @media (prefers-reduced-motion: reduce) { .cursor-reticle { display: none !important; } }

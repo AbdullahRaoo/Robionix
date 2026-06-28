@@ -4,16 +4,11 @@ import Reveal from "./Reveal";
 type Member = { name: string; role: string; img: string; lead?: boolean };
 
 const TEAM: Member[] = [
-  { name: "Dr. Awais Yasin", role: "Founder & Director", img: "/assets/team/awais-yasin.webp", lead: true },
-  { name: "Umer Saleem", role: "Lead Software Engineer", img: "/assets/team/umer-saleem.webp" },
-  { name: "Mohsin Ali", role: "Computer Vision Engineer", img: "/assets/team/mohsin-ali.webp" },
-  { name: "Waqas Chaudhary", role: "Embedded Systems Engineer", img: "/assets/team/waqas-chaudhary.webp" },
+  { name: "Dr. Awais Yasin", role: "Founder & CEO", img: "/assets/team/awais-yasin.webp", lead: true },
+  { name: "Waqas Chaudhary", role: "CTO", img: "/assets/team/waqas-chaudhary.webp" },
   { name: "Inayatullah", role: "Robotics Engineer", img: "/assets/team/inayatullah.webp" },
-  { name: "Marium Jalal", role: "ERP Consultant", img: "/assets/team/marium-jalal.webp" },
-  { name: "Rida Batool", role: "Software Engineer", img: "/assets/team/rida-batool.webp" },
-  { name: "Rooh ul Amin", role: "Full-Stack Engineer", img: "/assets/team/rooh-ul-amin.webp" },
-  { name: "Waleed", role: "Hardware Engineer", img: "/assets/team/waleed.webp" },
-  { name: "Abdullah", role: "Software Engineer", img: "/assets/team/abdullah.webp" },
+  { name: "Muhammad Waleed", role: "Embedded Systems Engineer", img: "/assets/team/waleed.webp" },
+  { name: "Abdullah Saleem", role: "Software & AI Engineer", img: "/assets/team/abdullah.webp" },
 ];
 
 export default function Team() {
