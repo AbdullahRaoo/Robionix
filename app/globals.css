@@ -72,6 +72,7 @@
   --glass-shadow: 0 24px 50px -12px rgba(0,0,0,.7), inset 0 1px 1px rgba(255,255,255,.16);
   --glow1: #0e6286;
   --glow2: #f0a800;
+  --surface: #0b2c3b;
 }
 [data-theme="light"] {
   --hb: #ece8df;
@@ -94,6 +95,7 @@
   --glass-shadow: 0 24px 50px -16px rgba(0,42,59,.2), inset 0 1px 1px #fff;
   --glow1: #a7cdda;
   --glow2: #f0a800;
+  --surface: #ffffff;
 }
 
 @layer base {
@@ -189,6 +191,22 @@
 .cine-intro-2 { clip-path: inset(0 100% 0 0); }
 .cine-scan { opacity: 0; }
 .cine-ready .cine-scan { animation: cineScan 4.4s cubic-bezier(.4,0,.2,1) infinite; }
+
+/* computer-vision detection reticle cursor (desktop only) */
+.cursor-reticle {
+  position: fixed; top: 0; left: 0; z-index: 9999; pointer-events: none;
+  transition: opacity .3s ease, scale .18s var(--ease-out-quint);
+  will-change: transform; filter: drop-shadow(0 0 4px rgba(240,168,0,.45));
+}
+.cursor-reticle path { transition: transform .2s var(--ease-out-quint); }
+.cursor-reticle.cursor-lock { scale: 1.4; }
+.cursor-reticle.cursor-lock .cr-tl { transform: translate(-2px,-2px); }
+.cursor-reticle.cursor-lock .cr-tr { transform: translate(2px,-2px); }
+.cursor-reticle.cursor-lock .cr-br { transform: translate(2px,2px); }
+.cursor-reticle.cursor-lock .cr-bl { transform: translate(-2px,2px); }
+.cursor-reticle.cursor-down { scale: .82; }
+@media (hover: none), (pointer: coarse) { .cursor-reticle { display: none !important; } }
+@media (prefers-reduced-motion: reduce) { .cursor-reticle { display: none !important; } }
 @media (prefers-reduced-motion: reduce) { .cine-ready .cine-scan { animation: none; opacity: .35; } }
 
 @keyframes cineScan {

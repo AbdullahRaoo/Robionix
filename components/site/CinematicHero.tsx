@@ -145,7 +145,7 @@ export default function CinematicHero() {
           <span className="h-1.5 w-1.5 rounded-full bg-[#34D399]" /> Vision AI · Robotics · Industrial ERP
         </p>
 
-        <h1 className="cine-hero-el cine-systext cine-init relative mt-6 max-w-[20ch] text-[clamp(2.2rem,4.4vw,3.7rem)] font-extrabold leading-[1.08] tracking-[-0.02em] t-ink">
+        <h1 className="cine-hero-el cine-systext cine-init relative mt-6 max-w-[22ch] text-[clamp(2.2rem,4.4vw,3.7rem)] font-extrabold leading-[1.08] tracking-[-0.02em] t-ink">
           Systems that see, measure, and run the{" "}
           <span className="relative whitespace-nowrap t-accent">factory floor
             <span className="absolute -bottom-1 left-0 h-[3px] w-full rounded-full bg-amber-500/70" />

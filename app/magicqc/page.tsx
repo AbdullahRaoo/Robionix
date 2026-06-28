@@ -150,17 +150,17 @@ export default function MagicQCPage() {
         {/* the station — real photos */}
         <section className="mx-auto max-w-[1240px] px-6 py-24 lg:py-32">
           <Reveal className="mx-auto max-w-2xl text-center">
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em]" style={{ color: "var(--kicker)" }}>In the field</p>
-            <h2 className="cine-systext mt-4 text-[clamp(1.9rem,3.4vw,2.9rem)] font-extrabold leading-[1.08] t-ink">The station, deployed</h2>
+            <p className="font-mono text-[11px] uppercase tracking-[0.22em]" style={{ color: "var(--kicker)" }}>Production-ready</p>
+            <h2 className="cine-systext mt-4 text-[clamp(1.9rem,3.4vw,2.9rem)] font-extrabold leading-[1.08] t-ink">A measurement table built for the floor</h2>
           </Reveal>
           <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
             <Reveal className="col-span-2 row-span-2">
-              <img src="/assets/magicqc/demo-presenting.webp" alt="Robionix presenting the MagicQC station" className="h-full w-full rounded-2xl object-cover" style={{ minHeight: 280 }} />
+              <img src="/assets/magicqc/station-operator.webp" alt="Operator working at the MagicQC measurement station" className="h-full w-full rounded-2xl object-cover" style={{ minHeight: 280 }} />
             </Reveal>
             <Reveal delay={70}><img src="/assets/magicqc/station-front.webp" alt="MagicQC measurement station" className="h-full w-full rounded-2xl object-cover" /></Reveal>
             <Reveal delay={140}><img src="/assets/magicqc/station-wide.webp" alt="MagicQC station, full view" className="h-full w-full rounded-2xl object-cover" /></Reveal>
             <Reveal delay={210}><img src="/assets/magicqc/demo-group.webp" alt="MagicQC demonstration to a group" className="h-full w-full rounded-2xl object-cover" /></Reveal>
-            <Reveal delay={280}><img src="/assets/magicqc/station-operator.webp" alt="Operator at the MagicQC station" className="h-full w-full rounded-2xl object-cover" /></Reveal>
+            <Reveal delay={280}><img src="/assets/magicqc/demo-presenting.webp" alt="Robionix presenting the MagicQC station" className="h-full w-full rounded-2xl object-cover" /></Reveal>
           </div>
         </section>
 

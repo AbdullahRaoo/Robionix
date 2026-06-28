@@ -40,7 +40,7 @@ function Dropdown({ label, items, open, setOpen, hub }: { label: string; items: 
       </Link>
       {open && (
         <div className="absolute left-1/2 top-full z-50 w-[320px] -translate-x-1/2 pt-3">
-          <div className="cine-glass grid gap-1 rounded-2xl p-2">
+          <div className="cine-glass grid gap-1 rounded-2xl p-2" style={{ background: "var(--surface)" }}>
             {items.map((it) => (
               <Link key={it.href} href={it.href} className="flex flex-col rounded-xl px-4 py-2.5 transition-colors hover:[background:var(--panel)]">
                 <span className="text-sm font-semibold t-ink">{it.label}</span>
@@ -89,7 +89,7 @@ export default function HeaderInner() {
 
       {mobile && (
         <div className="mx-4 mb-3 max-h-[70vh] overflow-y-auto lg:hidden">
-          <div className="cine-glass flex flex-col gap-3 rounded-2xl p-4">
+          <div className="cine-glass flex flex-col gap-3 rounded-2xl p-4" style={{ background: "var(--surface)" }}>
             {[["Products", PRODUCTS, "/products"], ["Services", SERVICES, "/services"]].map(([h, items, hub]) => (
               <div key={h as string}>
                 <Link href={hub as string} onClick={() => setMobile(false)} className="font-mono text-[10px] uppercase tracking-[0.18em] t-accent">{h as string}</Link>

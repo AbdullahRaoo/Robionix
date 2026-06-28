@@ -69,6 +69,7 @@ export const SERVICES: Service[] = [
     tagline: "Precision and productivity, by design",
     intro:
       "We design custom robotic solutions that bring accuracy, reliability and efficiency to your operations. From vision-guided cells to full line automation, our systems are built for your specific operational challenges.",
+    heroImg: "/assets/services/robotics.webp",
     capabilities: [
       { t: "Robotic cells", b: "Custom cells for pick-and-place, assembly and material handling." },
       { t: "Vision-guided robotics", b: "Robots that see, pairing our computer vision with motion." },
@@ -141,6 +142,7 @@ export const SERVICES: Service[] = [
     tagline: "Immersive experiences for modern applications",
     intro:
       "We deliver interactive, immersive virtual-reality projects for training, simulation and education. VR lets your team practise and learn in a safe, repeatable, fully-controlled environment.",
+    heroImg: "/assets/services/vr.webp",
     capabilities: [
       { t: "Training simulations", b: "Practise high-stakes or expensive procedures safely." },
       { t: "Interactive education", b: "Immersive learning that improves retention." },

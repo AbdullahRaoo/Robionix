@@ -48,15 +48,15 @@ export default function MagicQCShowcase() {
 
           {/* framed dashboard */}
           <Reveal y={36}>
-            <div className="cine-stage relative overflow-hidden rounded-[20px] p-3">
+            <div className="cine-stage relative rounded-[20px] p-3">
               <div className="mb-2 flex items-center gap-2 px-2 pt-1">
                 <span className="h-2 w-2 rounded-full bg-[#F0A800]/80" />
                 <span className="h-2 w-2 rounded-full bg-[#34D399]/80" />
                 <span className="h-2 w-2 rounded-full" style={{ background: "var(--border)" }} />
                 <span className="ml-2 font-mono text-[10px] uppercase tracking-widest t-faint">magicqc · analytics dashboard</span>
               </div>
-              <img src="/assets/magicqc/analytics-dashboard.webp" alt="MagicQC director analytics dashboard showing piece-level pass and fail rates" className="block w-full rounded-[12px]" />
-              <div className="cine-glass absolute -bottom-5 -left-4 hidden items-center gap-3 rounded-xl px-4 py-3 sm:flex">
+              <img src="/assets/magicqc/analytics-dashboard.webp" alt="MagicQC director analytics dashboard showing piece-level pass and fail rates" className="block w-full overflow-hidden rounded-[12px]" />
+              <div className="cine-glass absolute -bottom-5 -left-4 z-20 hidden items-center gap-3 rounded-xl px-4 py-3 sm:flex">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#34D399] opacity-60" />
                   <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#34D399]" />

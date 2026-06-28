@@ -42,6 +42,24 @@ export default function ContactPage() {
           </div>
         </section>
 
+        <section className="mx-auto max-w-[1240px] px-6 pb-16">
+          <Reveal>
+            <div className="cine-stage overflow-hidden rounded-[20px] p-3">
+              <div className="mb-2 flex items-center gap-2 px-2 pt-1">
+                <span className="h-2 w-2 rounded-full bg-[#F0A800]/80" /><span className="h-2 w-2 rounded-full bg-[#34D399]/80" /><span className="h-2 w-2 rounded-full" style={{ background: "var(--border)" }} />
+                <span className="ml-2 font-mono text-[10px] uppercase tracking-widest t-faint">nutech · i-12/2 · islamabad</span>
+              </div>
+              <iframe
+                title="Robionix at NUTECH, Islamabad"
+                src="https://maps.google.com/maps?q=National%20University%20of%20Technology%20NUTECH%20Islamabad&z=15&output=embed"
+                className="block h-[360px] w-full rounded-[12px] border-0 grayscale-[0.2]"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </Reveal>
+        </section>
+
         <section className="mx-auto max-w-[760px] px-6 pb-28">
           <Reveal>
             <form className="cine-glass flex flex-col gap-4 rounded-2xl p-7 lg:p-9" aria-label="Contact form">
