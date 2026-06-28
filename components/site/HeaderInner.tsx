@@ -33,10 +33,17 @@ function toggleTheme() {
 
 function Dropdown({ label, items, open, setOpen, hub }: { label: string; items: typeof PRODUCTS; open: boolean; setOpen: (v: boolean) => void; hub: string }) {
   return (
-    <div className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-      <Link href={hub} className="flex items-center gap-1 py-2 t-soft transition-colors hover:[color:var(--ink)]">
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      onFocus={() => setOpen(true)}
+      onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget as Node)) setOpen(false); }}
+      onKeyDown={(e) => { if (e.key === "Escape") setOpen(false); }}
+    >
+      <Link href={hub} aria-haspopup="true" aria-expanded={open} className="flex items-center gap-1 py-2 t-soft transition-colors hover:[color:var(--ink)]">
         {label}
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className={`transition-transform ${open ? "rotate-180" : ""}`}><path d="m6 9 6 6 6-6" /></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className={`transition-transform ${open ? "rotate-180" : ""}`} aria-hidden><path d="m6 9 6 6 6-6" /></svg>
       </Link>
       {open && (
         <div className="absolute left-1/2 top-full z-50 w-[320px] -translate-x-1/2 pt-3">

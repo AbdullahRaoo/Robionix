@@ -44,7 +44,7 @@ export default function MagicQCPage() {
   return (
     <>
       <SiteHeader />
-      <main className="overflow-x-hidden">
+      <main id="main" className="overflow-x-hidden">
         {/* hero */}
         <section className="relative overflow-hidden px-6 pt-16 pb-20 lg:pt-24">
           <span aria-hidden className="pointer-events-none absolute -right-32 top-0 h-[36rem] w-[36rem] rounded-full opacity-[0.14]" style={{ background: "radial-gradient(circle,var(--glow1),transparent 65%)" }} />

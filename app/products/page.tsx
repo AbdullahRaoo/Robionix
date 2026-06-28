@@ -40,7 +40,7 @@ export default function ProductsPage() {
   return (
     <>
       <SiteHeader />
-      <main className="overflow-x-hidden">
+      <main id="main" className="overflow-x-hidden">
         <section className="relative overflow-hidden px-6 pt-16 pb-12 lg:pt-24">
           <span aria-hidden className="pointer-events-none absolute -left-32 top-0 h-[34rem] w-[34rem] rounded-full opacity-[0.12]" style={{ background: "radial-gradient(circle,var(--glow1),transparent 65%)" }} />
           <Reveal className="relative mx-auto max-w-[760px] text-center">

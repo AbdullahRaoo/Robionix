@@ -9,7 +9,7 @@ import SiteFooter from "@/components/site/SiteFooter";
 export default function Home() {
   return (
     <>
-      <main className="overflow-x-hidden">
+      <main id="main" className="overflow-x-hidden">
         <CinematicHero />
         <MagicQCShowcase />
         <ProductsHome />

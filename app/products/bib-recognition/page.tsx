@@ -23,7 +23,7 @@ export default function BibPage() {
   return (
     <>
       <SiteHeader />
-      <main className="overflow-x-hidden">
+      <main id="main" className="overflow-x-hidden">
         <section className="relative overflow-hidden px-6 pt-14 pb-16 lg:pt-20">
           <span aria-hidden className="pointer-events-none absolute -right-32 top-0 h-[36rem] w-[36rem] rounded-full opacity-[0.13]" style={{ background: "radial-gradient(circle,var(--glow1),transparent 65%)" }} />
           <div className="relative mx-auto grid max-w-[1240px] items-center gap-14 lg:grid-cols-2 lg:gap-16">

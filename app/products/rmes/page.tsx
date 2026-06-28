@@ -24,7 +24,7 @@ export default function RmesPage() {
   return (
     <>
       <SiteHeader />
-      <main className="overflow-x-hidden">
+      <main id="main" className="overflow-x-hidden">
         {/* hero */}
         <section className="relative overflow-hidden px-6 pt-14 pb-16 lg:pt-20">
           <span aria-hidden className="pointer-events-none absolute -right-32 top-0 h-[36rem] w-[36rem] rounded-full opacity-[0.13]" style={{ background: "radial-gradient(circle,var(--glow1),transparent 65%)" }} />

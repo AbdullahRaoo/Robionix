@@ -55,7 +55,7 @@
   --hb: #041219;
   --ink: #f4f7f8;
   --ink-soft: rgba(244, 247, 248, 0.74);
-  --ink-faint: rgba(244, 247, 248, 0.46);
+  --ink-faint: rgba(244, 247, 248, 0.62);
   --ghost: rgba(126, 184, 204, 0.05);
   --border: rgba(140, 190, 205, 0.13);
   --accent: #ffbe3d;
@@ -78,7 +78,7 @@
   --hb: #ece8df;
   --ink: #13212a;
   --ink-soft: rgba(19, 33, 42, 0.74);
-  --ink-faint: rgba(19, 33, 42, 0.5);
+  --ink-faint: rgba(19, 33, 42, 0.64);
   --ghost: rgba(0, 60, 84, 0.05);
   --border: rgba(0, 60, 84, 0.12);
   --accent: #0b4f6c;
@@ -149,6 +149,14 @@
 /* skip rendering off-screen sections (faster first paint + smoother scroll) */
 main section { content-visibility: auto; contain-intrinsic-size: auto 720px; }
 .hero-root, .hero-root section { content-visibility: visible; contain-intrinsic-size: none; }
+
+/* keyboard skip-link */
+.skip-link {
+  position: fixed; top: -100px; left: 1rem; z-index: 10000;
+  background: var(--accent); color: #04151d; padding: .65rem 1.1rem; border-radius: 10px;
+  font-size: .85rem; font-weight: 600; transition: top .2s ease;
+}
+.skip-link:focus { top: 1rem; outline: 2px solid #04151d; outline-offset: 2px; }
 .cine-ghost { color: var(--ghost); }
 .cine-grain {
   position: absolute; inset: 0; pointer-events: none; z-index: 60; opacity: .055; mix-blend-mode: overlay;
