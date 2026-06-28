@@ -116,7 +116,7 @@
   }
   h1, h2, h3 {
     color: var(--ink);
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: var(--font-display), "Segoe UI", system-ui, sans-serif;
     font-weight: 700;
     letter-spacing: -0.02em;
     text-wrap: balance;
@@ -132,7 +132,7 @@
 .t-soft { color: var(--ink-soft); }
 .t-faint { color: var(--ink-faint); }
 .t-accent { color: var(--accent); }
-.cine-systext { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+.cine-systext { font-family: var(--font-display), "Segoe UI", system-ui, sans-serif; }
 /* Solid-tinted card surface (no backdrop blur: there's nothing behind these to
    blur, and N simultaneous blur passes are the main scroll-jank source on low-end). */
 .cine-glass {

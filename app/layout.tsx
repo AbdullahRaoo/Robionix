@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import CursorTracker from "@/components/site/CursorTracker";
 import MobileCTABar from "@/components/site/MobileCTABar";
 import "./globals.css";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono", display: "swap" });
+const display = Space_Grotesk({ subsets: ["latin"], variable: "--font-display", display: "swap" });
 
 const DESC = "Robionix engineers the systems that see, measure, and run modern factories: MagicQC AI garment measurement, manufacturing ERP, robotics and embedded systems.";
 
@@ -38,7 +39,7 @@ const themeScript = `(function(){try{var t=localStorage.getItem('robionix-theme'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="dark" suppressHydrationWarning className={`${geist.variable} ${geistMono.variable}`}>
+    <html lang="en" data-theme="dark" suppressHydrationWarning className={`${geist.variable} ${geistMono.variable} ${display.variable}`}>
       <body>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <a href="#main" className="skip-link">Skip to content</a>
