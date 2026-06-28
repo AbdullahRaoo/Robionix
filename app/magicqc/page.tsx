@@ -69,7 +69,7 @@ export default function MagicQCPage() {
                   <span className="h-2 w-2 rounded-full bg-[#F0A800]/80" /><span className="h-2 w-2 rounded-full bg-[#34D399]/80" /><span className="h-2 w-2 rounded-full" style={{ background: "var(--border)" }} />
                   <span className="ml-2 font-mono text-[10px] uppercase tracking-widest t-faint">magicqc · operator panel</span>
                 </div>
-                <img src="/assets/magicqc/operator-panel.webp" alt="MagicQC operator panel reading points of measure" className="block w-full rounded-[12px]" />
+                <img loading="lazy" decoding="async" src="/assets/magicqc/operator-panel.webp" alt="MagicQC operator panel reading points of measure" className="block w-full rounded-[12px]" />
               </div>
             </Reveal>
           </div>
@@ -95,7 +95,7 @@ export default function MagicQCPage() {
           </Reveal>
           <Reveal y={34} className="mt-12">
             <div className="cine-stage overflow-hidden rounded-[20px] p-3">
-              <img src="/assets/magicqc/garment-cv-closeup.webp" alt="Computer vision measuring a garment on the MagicQC screen" className="block w-full rounded-[12px]" />
+              <img loading="lazy" decoding="async" src="/assets/magicqc/garment-cv-closeup.webp" alt="Computer vision measuring a garment on the MagicQC screen" className="block w-full rounded-[12px]" />
             </div>
           </Reveal>
           <div className="mt-12 grid gap-px sm:grid-cols-3" style={{ background: "var(--border)" }}>
@@ -136,7 +136,7 @@ export default function MagicQCPage() {
             {VIEWS.map((v, i) => (
               <Reveal key={v.t} delay={i * 80}>
                 <article className="cine-glass flex h-full flex-col overflow-hidden rounded-2xl">
-                  <img src={v.img} alt={v.t} className="w-full border-b object-cover" style={{ borderColor: "var(--border)" }} />
+                  <img src={v.img} alt={v.t} loading="lazy" decoding="async" className="w-full border-b object-cover" style={{ borderColor: "var(--border)" }} />
                   <div className="p-6">
                     <h3 className="cine-systext text-lg font-bold t-ink">{v.t}</h3>
                     <p className="mt-2 text-sm t-soft">{v.d}</p>
@@ -155,12 +155,12 @@ export default function MagicQCPage() {
           </Reveal>
           <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
             <Reveal className="col-span-2 row-span-2">
-              <img src="/assets/magicqc/station-operator.webp" alt="Operator working at the MagicQC measurement station" className="h-full w-full rounded-2xl object-cover" style={{ minHeight: 280 }} />
+              <img loading="lazy" decoding="async" src="/assets/magicqc/station-operator.webp" alt="Operator working at the MagicQC measurement station" className="h-full w-full rounded-2xl object-cover" style={{ minHeight: 280 }} />
             </Reveal>
-            <Reveal delay={70}><img src="/assets/magicqc/station-front.webp" alt="MagicQC measurement station" className="h-full w-full rounded-2xl object-cover" /></Reveal>
-            <Reveal delay={140}><img src="/assets/magicqc/station-wide.webp" alt="MagicQC station, full view" className="h-full w-full rounded-2xl object-cover" /></Reveal>
-            <Reveal delay={210}><img src="/assets/magicqc/demo-group.webp" alt="MagicQC demonstration to a group" className="h-full w-full rounded-2xl object-cover" /></Reveal>
-            <Reveal delay={280}><img src="/assets/magicqc/demo-presenting.webp" alt="Robionix presenting the MagicQC station" className="h-full w-full rounded-2xl object-cover" /></Reveal>
+            <Reveal delay={70}><img loading="lazy" decoding="async" src="/assets/magicqc/station-front.webp" alt="MagicQC measurement station" className="h-full w-full rounded-2xl object-cover" /></Reveal>
+            <Reveal delay={140}><img loading="lazy" decoding="async" src="/assets/magicqc/station-wide.webp" alt="MagicQC station, full view" className="h-full w-full rounded-2xl object-cover" /></Reveal>
+            <Reveal delay={210}><img loading="lazy" decoding="async" src="/assets/magicqc/demo-group.webp" alt="MagicQC demonstration to a group" className="h-full w-full rounded-2xl object-cover" /></Reveal>
+            <Reveal delay={280}><img loading="lazy" decoding="async" src="/assets/magicqc/demo-presenting.webp" alt="Robionix presenting the MagicQC station" className="h-full w-full rounded-2xl object-cover" /></Reveal>
           </div>
         </section>
 

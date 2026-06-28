@@ -91,16 +91,20 @@ export default function CinematicHero() {
     window.addEventListener("pointerdown", speedUp);
     window.addEventListener("keydown", speedUp);
 
+    // reuse one tween per axis (quickTo) instead of allocating a tween per move
+    const rotY = tilt.current ? gsap.quickTo(tilt.current, "rotationY", { duration: 0.7, ease: "power3" }) : null;
+    const rotX = tilt.current ? gsap.quickTo(tilt.current, "rotationX", { duration: 0.7, ease: "power3" }) : null;
     const onMove = (e: MouseEvent) => {
-      if (reduce || !ready.current || !tilt.current) return;
+      if (reduce || !ready.current || !rotY || !rotX) return;
       cancelAnimationFrame(raf.current);
       raf.current = requestAnimationFrame(() => {
         const x = (e.clientX / window.innerWidth - 0.5) * 2;
         const y = (e.clientY / window.innerHeight - 0.5) * 2;
-        gsap.to(tilt.current, { rotateY: x * 6, rotateX: -y * 6, ease: "power3.out", duration: 1.1 });
+        rotY(x * 6);
+        rotX(-y * 6);
       });
     };
-    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mousemove", onMove, { passive: true });
 
     return () => {
       window.removeEventListener("wheel", speedUp);

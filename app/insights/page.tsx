@@ -39,7 +39,7 @@ export default function InsightsPage() {
               <Reveal key={c.title} className={c.featured ? "sm:col-span-2" : ""}>
                 <Link href={c.href} className={`cine-glass group flex h-full flex-col overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1 ${c.featured ? "sm:flex-row" : ""}`}>
                   <div className={`relative overflow-hidden ${c.featured ? "sm:w-1/2" : ""}`}>
-                    <img src={c.img} alt={c.title} className={`w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] ${c.featured ? "h-56 sm:h-full" : "h-44"}`} />
+                    <img src={c.img} alt={c.title} loading="lazy" decoding="async" className={`w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] ${c.featured ? "h-56 sm:h-full" : "h-44"}`} />
                   </div>
                   <div className={`flex flex-col p-6 ${c.featured ? "sm:w-1/2 sm:justify-center sm:p-9" : ""}`}>
                     <span className="font-mono text-[10px] uppercase tracking-[0.18em] t-accent">{c.tag}</span>

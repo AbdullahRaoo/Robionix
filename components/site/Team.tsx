@@ -34,7 +34,7 @@ export default function Team() {
           <Reveal key={m.name} delay={(i % 5) * 60}>
             <figure className="group flex flex-col items-center text-center">
               <div className={`relative aspect-square w-full overflow-hidden rounded-full ${m.lead ? "ring-2" : "ring-1"}`} style={{ background: "var(--panel)", boxShadow: "var(--glass-shadow)", ["--tw-ring-color" as string]: m.lead ? "var(--accent)" : "var(--border)" }}>
-                <img src={m.img} alt={m.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src={m.img} alt={m.name} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
               </div>
               <figcaption className="mt-4">
                 <p className="cine-systext text-sm font-bold t-ink">{m.name}</p>

@@ -67,7 +67,7 @@
   --panel: rgba(150, 200, 215, 0.05);
   --stage-bg: radial-gradient(120% 120% at 50% 0%, #0a2e3e 0%, #061d27 55%, #03121a 100%);
   --stage-shadow: 0 50px 110px -30px rgba(0,0,0,.85), inset 0 1px 0 rgba(140,190,205,.14);
-  --glass: linear-gradient(135deg, rgba(150,200,215,.12), rgba(150,200,215,.02));
+  --glass: linear-gradient(135deg, rgba(20,56,72,.72), rgba(12,40,52,.62));
   --glass-border: rgba(150, 200, 215, 0.18);
   --glass-shadow: 0 24px 50px -12px rgba(0,0,0,.7), inset 0 1px 1px rgba(255,255,255,.16);
   --glow1: #0e6286;
@@ -90,7 +90,7 @@
   --panel: rgba(255, 255, 255, 0.7);
   --stage-bg: linear-gradient(180deg, #ffffff 0%, #f3f0e9 100%);
   --stage-shadow: 0 40px 90px -30px rgba(0,42,59,.24), inset 0 1px 0 #fff;
-  --glass: linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,255,255,.62));
+  --glass: linear-gradient(135deg, rgba(255,255,255,.86), rgba(248,246,240,.78));
   --glass-border: rgba(0, 60, 84, 0.1);
   --glass-shadow: 0 24px 50px -16px rgba(0,42,59,.2), inset 0 1px 1px #fff;
   --glow1: #a7cdda;
@@ -133,10 +133,10 @@
 .t-faint { color: var(--ink-faint); }
 .t-accent { color: var(--accent); }
 .cine-systext { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+/* Solid-tinted card surface (no backdrop blur: there's nothing behind these to
+   blur, and N simultaneous blur passes are the main scroll-jank source on low-end). */
 .cine-glass {
   background: var(--glass);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
 }
@@ -145,6 +145,10 @@
   box-shadow: 0 1px 0 rgba(255,255,255,.4) inset, 0 14px 28px -8px rgba(240,168,0,.5);
 }
 .cine-stage { background: var(--stage-bg); box-shadow: var(--stage-shadow); border: 1px solid var(--border); }
+
+/* skip rendering off-screen sections (faster first paint + smoother scroll) */
+main section { content-visibility: auto; contain-intrinsic-size: auto 720px; }
+.hero-root, .hero-root section { content-visibility: visible; contain-intrinsic-size: none; }
 .cine-ghost { color: var(--ghost); }
 .cine-grain {
   position: absolute; inset: 0; pointer-events: none; z-index: 60; opacity: .055; mix-blend-mode: overlay;

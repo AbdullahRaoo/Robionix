@@ -24,7 +24,7 @@ function Card({ p }: { p: P }) {
   return (
     <Link href={p.href} className={`cine-glass group flex h-full flex-col overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1 ${p.featured ? "lg:col-span-2 lg:flex-row" : ""}`}>
       <div className={`relative overflow-hidden ${p.featured ? "lg:w-1/2" : ""}`}>
-        <img src={p.img} alt={p.title} className={`w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] ${p.featured ? "h-56 lg:h-full" : "h-44"}`} />
+        <img src={p.img} alt={p.title} loading="lazy" decoding="async" className={`w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] ${p.featured ? "h-56 lg:h-full" : "h-44"}`} />
       </div>
       <div className={`flex flex-col p-6 ${p.featured ? "lg:w-1/2 lg:justify-center lg:p-9" : ""}`}>
         <span className="font-mono text-[10px] uppercase tracking-[0.18em] t-accent">{p.tag}</span>

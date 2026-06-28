@@ -99,7 +99,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               {s.related.map((r) => (
                 <Reveal key={r.title}>
                   <Link href={r.href} className="cine-glass group flex overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1">
-                    <img src={r.img} alt={r.title} className="h-32 w-40 shrink-0 object-cover" />
+                    <img src={r.img} alt={r.title} loading="lazy" decoding="async" className="h-32 w-40 shrink-0 object-cover" />
                     <div className="flex flex-col justify-center p-5">
                       <span className="font-mono text-[10px] uppercase tracking-[0.18em] t-accent">{r.tag}</span>
                       <span className="cine-systext mt-1 text-lg font-bold t-ink">{r.title}</span>

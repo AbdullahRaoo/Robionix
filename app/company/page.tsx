@@ -50,9 +50,9 @@ export default function CompanyPage() {
             <h2 className="cine-systext mt-4 text-[clamp(1.7rem,3vw,2.5rem)] font-extrabold leading-[1.08] t-ink">Where the work happens</h2>
           </Reveal>
           <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
-            <Reveal className="col-span-2"><img src="/assets/magicqc/demo-group.webp" alt="Robionix demonstrating MagicQC" className="h-full w-full rounded-2xl object-cover" style={{ minHeight: 220 }} /></Reveal>
-            <Reveal delay={70}><img src="/assets/magicqc/station-front.webp" alt="MagicQC station" className="h-full w-full rounded-2xl object-cover" /></Reveal>
-            <Reveal delay={140}><img src="/assets/magicqc/demo-presenting.webp" alt="Presenting MagicQC" className="h-full w-full rounded-2xl object-cover" /></Reveal>
+            <Reveal className="col-span-2"><img loading="lazy" decoding="async" src="/assets/magicqc/demo-group.webp" alt="Robionix demonstrating MagicQC" className="h-full w-full rounded-2xl object-cover" style={{ minHeight: 220 }} /></Reveal>
+            <Reveal delay={70}><img loading="lazy" decoding="async" src="/assets/magicqc/station-front.webp" alt="MagicQC station" className="h-full w-full rounded-2xl object-cover" /></Reveal>
+            <Reveal delay={140}><img loading="lazy" decoding="async" src="/assets/magicqc/demo-presenting.webp" alt="Presenting MagicQC" className="h-full w-full rounded-2xl object-cover" /></Reveal>
           </div>
         </section>
 

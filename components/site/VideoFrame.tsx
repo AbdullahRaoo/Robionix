@@ -36,7 +36,7 @@ export default function VideoFrame({
             aria-label="Play video"
             className="group absolute inset-0 h-full w-full"
           >
-            <img src={poster} alt="" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+            <img src={poster} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
             <span aria-hidden className="absolute inset-0" style={{ background: "linear-gradient(180deg,rgba(4,18,25,.15),rgba(4,18,25,.45))" }} />
             <span aria-hidden className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-transform duration-300 group-hover:scale-110" style={{ background: "linear-gradient(180deg,#FFC53D,#F0A800)", boxShadow: "0 14px 34px -6px rgba(240,168,0,.6)" }}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="#04151d" className="ml-1"><path d="M5 3.5v17l15-8.5z" /></svg>
