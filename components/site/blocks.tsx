@@ -67,7 +67,7 @@ export function SpecRows({ rows }: { rows: [string, string][] }) {
 /* ---------- stat band ---------- */
 export function StatBand({ stats }: { stats: [string, string][] }) {
   return (
-    <Reveal>
+    <Reveal variant="scale">
       <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl sm:grid-cols-4" style={{ background: "var(--border)" }}>
         {stats.map(([v, l]) => (
           <div key={l} className="flex flex-col items-center gap-1 px-5 py-7 text-center" style={{ background: "var(--hb)" }}>
@@ -83,7 +83,7 @@ export function StatBand({ stats }: { stats: [string, string][] }) {
 /* ---------- on-brand flow diagram (data-viz, theme-aware SVG-ish) ---------- */
 export function FlowDiagram({ steps, note }: { steps: { t: string; s?: string }[]; note?: string }) {
   return (
-    <Reveal y={24}>
+    <Reveal y={24} variant="scale">
       <div className="cine-stage rounded-[20px] p-6 lg:p-10">
         <div className="flex flex-col items-stretch gap-3 lg:flex-row lg:items-center">
           {steps.map((st, i) => (

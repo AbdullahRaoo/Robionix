@@ -157,6 +157,9 @@ main section { content-visibility: auto; contain-intrinsic-size: auto 720px; }
   font-size: .85rem; font-weight: 600; transition: top .2s ease;
 }
 .skip-link:focus { top: 1rem; outline: 2px solid #04151d; outline-offset: 2px; }
+
+/* clear the mobile thumb-zone CTA bar */
+@media (max-width: 1023px) { body { padding-bottom: calc(4.75rem + env(safe-area-inset-bottom)); } }
 .cine-ghost { color: var(--ghost); }
 .cine-grain {
   position: absolute; inset: 0; pointer-events: none; z-index: 60; opacity: .055; mix-blend-mode: overlay;

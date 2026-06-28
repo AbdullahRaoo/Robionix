@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import CursorTracker from "@/components/site/CursorTracker";
+import MobileCTABar from "@/components/site/MobileCTABar";
 import "./globals.css";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <a href="#main" className="skip-link">Skip to content</a>
         {children}
+        <MobileCTABar />
         <CursorTracker />
       </body>
     </html>

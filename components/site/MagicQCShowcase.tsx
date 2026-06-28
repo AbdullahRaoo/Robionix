@@ -47,7 +47,7 @@ export default function MagicQCShowcase() {
           </div>
 
           {/* framed dashboard */}
-          <Reveal y={36}>
+          <Reveal y={36} variant="right">
             <div className="cine-stage relative rounded-[20px] p-3">
               <div className="mb-2 flex items-center gap-2 px-2 pt-1">
                 <span className="h-2 w-2 rounded-full bg-[#F0A800]/80" />
