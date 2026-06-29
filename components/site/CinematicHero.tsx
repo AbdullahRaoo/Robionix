@@ -7,10 +7,10 @@ import HeaderInner from "./HeaderInner";
 type POM = { id: string; label: string; val: string; color: string; a: [number, number]; b: [number, number]; l: [number, number] };
 
 const POMS: POM[] = [
-  { id: "SH", label: "SHOULDER", val: "50.0", color: "#38BDF8", a: [450, 150], b: [930, 150], l: [690, 126] },
+  { id: "SH", label: "SHOULDER", val: "50.0", color: "#38BDF8", a: [450, 150], b: [930, 150], l: [690, 131] },
   { id: "SL", label: "SLEEVE", val: "21.0", color: "#F472B6", a: [450, 158], b: [80, 318], l: [250, 212] },
   { id: "CH", label: "CHEST", val: "53.5", color: "#F5B025", a: [454, 416], b: [923, 416], l: [566, 398] },
-  { id: "LN", label: "LENGTH", val: "60.0", color: "#2DD4BF", a: [690, 120], b: [690, 688], l: [812, 404] },
+  { id: "LN", label: "LENGTH", val: "60.0", color: "#2DD4BF", a: [690, 120], b: [690, 688], l: [812, 399] },
   { id: "WA", label: "WAIST", val: "43.0", color: "#A78BFA", a: [457, 508], b: [920, 508], l: [688, 484] },
   { id: "HM", label: "HEM", val: "40.3", color: "#34D399", a: [477, 668], b: [898, 668], l: [688, 644] },
 ];
@@ -145,7 +145,7 @@ export default function CinematicHero() {
 
       {/* Content */}
       <section className="relative z-10 mx-auto flex min-h-screen max-w-[1180px] flex-col items-center justify-center px-6 pb-16 pt-32 text-center">
-        <p className="cine-hero-el cine-init relative inline-flex items-center gap-2 rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-[0.16em]" style={{ borderColor: "var(--border)", color: "var(--ink-soft)" }}>
+        <p className="cine-hero-el cine-init relative inline-flex items-center gap-2 rounded-full border px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] sm:text-[11px]" style={{ borderColor: "var(--border)", color: "var(--ink-soft)" }}>
           <span className="h-1.5 w-1.5 rounded-full bg-[#34D399]" /> Vision AI · Robotics · Industrial ERP
         </p>
 
@@ -193,7 +193,7 @@ export default function CinematicHero() {
                 </svg>
 
                 {POMS.map((p) => (
-                  <div key={p.id} className="cine-pomlabel absolute z-30 -translate-x-1/2 -translate-y-1/2 rounded-md px-1.5 py-0.5 font-mono text-[10px] font-semibold leading-none" style={{ left: `${(p.l[0] / 1376) * 100}%`, top: `${(p.l[1] / 768) * 100}%`, color: p.color, background: "rgba(2,10,16,.78)", border: `1px solid ${p.color}55` }}>
+                  <div key={p.id} className="cine-pomlabel absolute z-30 -translate-x-1/2 -translate-y-1/2 rounded-md px-1 py-0.5 font-mono text-[6px] font-semibold leading-none sm:px-1.5 sm:text-[10px]" style={{ left: `${(p.l[0] / 1376) * 100}%`, top: `${(p.l[1] / 768) * 100}%`, color: p.color, background: "rgba(2,10,16,.78)", border: `1px solid ${p.color}55` }}>
                     {p.label} {p.val}
                   </div>
                 ))}
@@ -223,11 +223,11 @@ export default function CinematicHero() {
           </div>
         </div>
 
-        <div className="cine-hero-el cine-init relative mt-10 flex flex-wrap items-center justify-center gap-3">
-          <a href="/contact" className="cine-cta inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-petrol-950 transition-transform duration-200 hover:-translate-y-0.5">
+        <div className="cine-hero-el cine-init relative mt-10 flex flex-nowrap items-center justify-center gap-2 sm:flex-wrap sm:gap-3">
+          <a href="/contact" className="cine-cta inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2.5 text-xs font-semibold text-petrol-950 transition-transform duration-200 hover:-translate-y-0.5 sm:gap-2 sm:px-6 sm:py-3 sm:text-sm">
             Book a meeting <span aria-hidden>→</span>
           </a>
-          <a href="/magicqc" className="cine-glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium t-ink transition-transform duration-200 hover:-translate-y-0.5">
+          <a href="/magicqc" className="cine-glass inline-flex items-center gap-2 whitespace-nowrap rounded-full px-4 py-2.5 text-xs font-medium t-ink transition-transform duration-200 hover:-translate-y-0.5 sm:px-6 sm:py-3 sm:text-sm">
             See MagicQC in action
           </a>
         </div>

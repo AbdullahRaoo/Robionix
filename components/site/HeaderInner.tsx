@@ -65,6 +65,7 @@ function Dropdown({ label, items, open, setOpen, hub }: { label: string; items: 
 export default function HeaderInner() {
   const [open, setOpen] = useState<string | null>(null);
   const [mobile, setMobile] = useState(false);
+  const [section, setSection] = useState<string | null>(null);
 
   return (
     <>
@@ -96,23 +97,37 @@ export default function HeaderInner() {
 
       {mobile && (
         <div className="mx-4 mb-3 max-h-[70vh] overflow-y-auto lg:hidden">
-          <div className="cine-glass flex flex-col gap-3 rounded-2xl p-4" style={{ background: "var(--surface)" }}>
-            {[["Products", PRODUCTS, "/products"], ["Services", SERVICES, "/services"]].map(([h, items, hub]) => (
-              <div key={h as string}>
-                <Link href={hub as string} onClick={() => setMobile(false)} className="font-mono text-[10px] uppercase tracking-[0.18em] t-accent">{h as string}</Link>
-                <div className="mt-2 flex flex-col">
-                  {(items as typeof PRODUCTS).map((it) => (
-                    <Link key={it.href} href={it.href} onClick={() => setMobile(false)} className="rounded-lg px-3 py-2.5 text-sm font-medium t-ink hover:[background:var(--panel)]">{it.label}</Link>
-                  ))}
+          <div className="cine-glass flex flex-col gap-1 rounded-2xl p-4" style={{ background: "var(--surface)" }}>
+            {([["Products", PRODUCTS, "/products"], ["Services", SERVICES, "/services"]] as const).map(([h, items, hub]) => {
+              const expanded = section === h;
+              return (
+                <div key={h} className="border-b pb-1" style={{ borderColor: "var(--border)" }}>
+                  <button
+                    type="button"
+                    onClick={() => setSection(expanded ? null : h)}
+                    aria-expanded={expanded}
+                    className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-sm font-semibold t-ink"
+                  >
+                    {h}
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className={`t-faint transition-transform ${expanded ? "rotate-180" : ""}`} aria-hidden><path d="m6 9 6 6 6-6" /></svg>
+                  </button>
+                  {expanded && (
+                    <div className="flex flex-col pb-1">
+                      {items.map((it) => (
+                        <Link key={it.href} href={it.href} onClick={() => setMobile(false)} className="rounded-lg px-3 py-2.5 text-sm font-medium t-soft hover:[background:var(--panel)]">{it.label}</Link>
+                      ))}
+                      <Link href={hub} onClick={() => setMobile(false)} className="rounded-lg px-3 py-2 text-sm font-medium t-accent hover:[background:var(--panel)]">View all {h.toLowerCase()} →</Link>
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
-            <div className="border-t pt-3" style={{ borderColor: "var(--border)" }}>
+              );
+            })}
+            <div className="pt-1">
               {SIMPLE.map((n) => (
-                <Link key={n.href} href={n.href} onClick={() => setMobile(false)} className="block rounded-lg px-3 py-2.5 text-sm font-medium t-ink hover:[background:var(--panel)]">{n.label}</Link>
+                <Link key={n.href} href={n.href} onClick={() => setMobile(false)} className="block rounded-lg px-3 py-3 text-sm font-semibold t-ink hover:[background:var(--panel)]">{n.label}</Link>
               ))}
             </div>
-            <Link href="/contact" onClick={() => setMobile(false)} className="cine-cta rounded-lg px-4 py-3 text-center text-sm font-semibold text-petrol-950">Book a demo</Link>
+            <Link href="/contact" onClick={() => setMobile(false)} className="cine-cta mt-2 rounded-lg px-4 py-3 text-center text-sm font-semibold text-petrol-950">Book a demo</Link>
           </div>
         </div>
       )}

@@ -14,11 +14,8 @@ export default function SiteFooter() {
           <div>
             <img src="/assets/brand/logo-wide-light.png" alt="Robionix Technologies" className="on-dark h-11 w-auto" />
             <img src="/assets/brand/logo-wide.png" alt="Robionix Technologies" className="on-light h-11 w-auto" />
-            <p className="mt-5 max-w-xs text-sm t-soft">
+            <p className="mt-5 max-w-md text-sm t-soft">
               Vision-driven automation for the factory floor. Built at NUTECH, Islamabad.
-            </p>
-            <p className="mt-4 font-mono text-[11px] uppercase tracking-wider t-faint">
-              NUTECH, I-12/2, Islamabad, Pakistan
             </p>
           </div>
           {COLS.map((c) => (
