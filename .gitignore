@@ -21,6 +21,7 @@ next-env.d.ts
 # raw source content (web-ready assets live in /public/assets)
 /extracted-content/
 /magicqc-content/
+*.py
 
 # misc
 .DS_Store

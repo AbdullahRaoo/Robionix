@@ -7,12 +7,12 @@ import HeaderInner from "./HeaderInner";
 type POM = { id: string; label: string; val: string; color: string; a: [number, number]; b: [number, number]; l: [number, number] };
 
 const POMS: POM[] = [
-  { id: "SH", label: "SHOULDER", val: "50.0", color: "#38BDF8", a: [416, 200], b: [960, 200], l: [688, 178] },
-  { id: "SL", label: "SLEEVE", val: "21.0", color: "#F472B6", a: [416, 206], b: [120, 300], l: [232, 246] },
-  { id: "CH", label: "CHEST", val: "53.5", color: "#F5B025", a: [388, 352], b: [988, 352], l: [688, 352] },
-  { id: "LN", label: "LENGTH", val: "60.0", color: "#2DD4BF", a: [688, 184], b: [688, 588], l: [1150, 430] },
-  { id: "WA", label: "WAIST", val: "43.0", color: "#A78BFA", a: [404, 466], b: [972, 466], l: [688, 466] },
-  { id: "HM", label: "HEM", val: "40.3", color: "#34D399", a: [428, 582], b: [948, 582], l: [688, 582] },
+  { id: "SH", label: "SHOULDER", val: "50.0", color: "#38BDF8", a: [450, 150], b: [930, 150], l: [690, 126] },
+  { id: "SL", label: "SLEEVE", val: "21.0", color: "#F472B6", a: [450, 158], b: [80, 318], l: [250, 212] },
+  { id: "CH", label: "CHEST", val: "53.5", color: "#F5B025", a: [454, 416], b: [923, 416], l: [566, 398] },
+  { id: "LN", label: "LENGTH", val: "60.0", color: "#2DD4BF", a: [690, 120], b: [690, 688], l: [812, 404] },
+  { id: "WA", label: "WAIST", val: "43.0", color: "#A78BFA", a: [457, 508], b: [920, 508], l: [688, 484] },
+  { id: "HM", label: "HEM", val: "40.3", color: "#34D399", a: [477, 668], b: [898, 668], l: [688, 644] },
 ];
 
 export default function CinematicHero() {

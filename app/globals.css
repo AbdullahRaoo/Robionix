@@ -210,14 +210,15 @@ main section { content-visibility: auto; contain-intrinsic-size: auto 720px; }
 .cine-scan { opacity: 0; }
 .cine-ready .cine-scan { animation: cineScan 4.4s cubic-bezier(.4,0,.2,1) infinite; }
 
-/* computer-vision detection reticle cursor (desktop only) */
+/* computer-vision detection reticle cursor (desktop only).
+   Position is on the outer element; scale on .cr-inner so it never offsets. */
 .cursor-reticle {
   position: fixed; top: 0; left: 0; z-index: 9999; pointer-events: none;
-  transition: opacity .3s ease, scale .18s var(--ease-out-quint);
-  will-change: transform; filter: drop-shadow(0 0 4px rgba(240,168,0,.45));
+  transition: opacity .25s ease; will-change: transform;
 }
-.cursor-reticle.cursor-lock { scale: 1.3; }
-.cursor-reticle.cursor-down { scale: .82; }
+.cr-inner { transition: transform .18s var(--ease-out-quint); filter: drop-shadow(0 0 4px rgba(240,168,0,.45)); }
+.cursor-reticle.cursor-lock .cr-inner { transform: scale(1.3); }
+.cursor-reticle.cursor-down .cr-inner { transform: scale(.82); }
 @media (hover: none), (pointer: coarse) { .cursor-reticle { display: none !important; } }
 @media (prefers-reduced-motion: reduce) { .cursor-reticle { display: none !important; } }
 @media (prefers-reduced-motion: reduce) { .cine-ready .cine-scan { animation: none; opacity: .35; } }
