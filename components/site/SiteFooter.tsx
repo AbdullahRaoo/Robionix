@@ -15,7 +15,7 @@ export default function SiteFooter() {
             <img src="/assets/brand/logo-wide-light.png" alt="Robionix Technologies" className="on-dark h-11 w-auto" />
             <img src="/assets/brand/logo-wide.png" alt="Robionix Technologies" className="on-light h-11 w-auto" />
             <p className="mt-5 max-w-md text-sm t-soft">
-              Vision-driven automation for the factory floor. Built at NUTECH, Islamabad.
+              Vision-driven automation for the factory floor. We build the systems that see, measure, and run modern manufacturing.
             </p>
           </div>
           {COLS.map((c) => (
