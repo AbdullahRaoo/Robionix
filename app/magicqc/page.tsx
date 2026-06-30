@@ -8,13 +8,43 @@ import VideoFrame from "@/components/site/VideoFrame";
 export const metadata: Metadata = {
   title: "MagicQC — AI garment size measurement | Robionix",
   description:
-    "MagicQC is an AI-based automated garment size-measurement station. Computer vision reads every point-of-measure against the buyer's tolerance in seconds, and feeds a live director dashboard.",
+    "MagicQC is an AI-based automated garment size-measurement system. Advanced vision intelligence reads every point-of-measure against the buyer's tolerance to sub-millimeter precision in seconds, then feeds a live pass/fail dashboard with enterprise reporting.",
 };
 
+const CAPS = [
+  { icon: "vision", t: "Intelligent Vision", d: "Advanced imaging that automatically identifies measurement points with sub-millimeter precision." },
+  { icon: "chip", t: "Smart Processing", d: "A real-time analysis engine that processes measurements instantly, delivering results in seconds, not minutes." },
+  { icon: "target", t: "Precise Measurement", d: "Automated dimension verification with configurable tolerances and instant pass / fail determination." },
+  { icon: "chart", t: "Live Analytics", d: "Comprehensive dashboards with production counters, trend analysis, and exportable quality reports." },
+  { icon: "shield", t: "Quality Assurance", d: "End-to-end traceability linking every measurement to its source for complete compliance and audit readiness." },
+  { icon: "scale", t: "Scalable Operations", d: "From single-station setups to multi-facility deployments, it scales effortlessly with your production needs." },
+];
+
 const STEPS = [
-  { n: "01", t: "Lay the piece flat", b: "An operator places the garment on the lit measurement bed. No rulers, no manual marking." },
-  { n: "02", t: "Vision reads every POM", b: "The overhead rig measures all points of measure against the buyer's tolerance table, live, in about three seconds." },
-  { n: "03", t: "Pass / fail to the dashboard", b: "Each piece flows to the director's analytics: pass rate, per-operator and per-article, in real time." },
+  { n: "01", t: "Capture", b: "Place the garment on the lit measurement bed. The system captures a high-resolution image automatically. No rulers, no manual marking." },
+  { n: "02", t: "Measure", b: "Intelligent vision identifies every key point of measure and calculates precise dimensions against the buyer's tolerance table, in real time." },
+  { n: "03", t: "Report", b: "Instant pass / fail results with detailed measurement data, trend analysis, and exportable quality reports flow to the live dashboard." },
+];
+
+const ENTERPRISE = [
+  "Real-time production counters: measured, passed, failed, pending",
+  "Defect trend analysis",
+  "Measurement precision of ±1 mm",
+  "Multi-facility aggregated reporting",
+  "Flat precision measurement table",
+  "Shadow-free uniform illumination",
+  "Remote results monitoring display",
+  "Automated PDF / CSV export",
+  "Operator control for garment selection",
+];
+
+const DIFF = [
+  ["Speed", "Minutes per item", "Seconds per item"],
+  ["Accuracy", "Operator-dependent", "Sub-millimeter precision"],
+  ["Consistency", "Varies with fatigue", "100% repeatable"],
+  ["Labor cost", "High manpower dependency", "Minimal human intervention"],
+  ["Data", "Paper records", "Digital & real-time"],
+  ["Scale", "Limited by workforce", "Unlimited capacity"],
 ];
 
 const VIEWS = [
@@ -34,11 +64,24 @@ const POMS = [
 ];
 
 const STATS = [
-  ["~3s", "per piece"],
-  ["vs ~90s", "manual"],
-  ["100%", "pieces logged"],
-  ["5+", "buyer profiles"],
+  ["99%", "measurement accuracy"],
+  ["10x", "faster than manual"],
+  ["±1 mm", "precision"],
+  ["500+", "inspections daily"],
 ];
+
+function CapIcon({ name }: { name: string }) {
+  const c = { width: 22, height: 22, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
+  switch (name) {
+    case "vision": return (<svg {...c}><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2" /><circle cx="12" cy="12" r="3" /></svg>);
+    case "chip": return (<svg {...c}><rect x="6" y="6" width="12" height="12" rx="1.5" /><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2" /></svg>);
+    case "target": return (<svg {...c}><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="3" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3" /></svg>);
+    case "chart": return (<svg {...c}><path d="M3 3v18h18" /><path d="m19 9-5 5-4-4-3 3" /></svg>);
+    case "shield": return (<svg {...c}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" /><path d="m9 12 2 2 4-4" /></svg>);
+    case "scale": return (<svg {...c}><path d="M3 7h18M3 12h18M3 17h18M7 4v16M17 4v16" /></svg>);
+    default: return null;
+  }
+}
 
 export default function MagicQCPage() {
   return (
@@ -54,9 +97,9 @@ export default function MagicQCPage() {
               <h1 className="cine-systext mt-4 text-[clamp(2.4rem,5vw,4rem)] font-extrabold leading-[1.04] t-ink">
                 MagicQC
               </h1>
-              <p className="cine-systext mt-2 text-[clamp(1.1rem,2vw,1.6rem)] font-semibold t-accent">AI-Based Automated Garment Size Measurement</p>
+              <p className="cine-systext mt-2 text-[clamp(1.1rem,2vw,1.6rem)] font-semibold t-accent">Where precision meets confidence</p>
               <p className="mt-5 max-w-lg text-base t-soft md:text-lg">
-                Computer vision reads every point-of-measure on a garment against the buyer&apos;s tolerance table in seconds, then feeds a live pass/fail dashboard. Inspection that used to take a minute and a tape measure now takes three seconds.
+                Advanced vision intelligence for automated measurement and quality verification. MagicQC reads every point-of-measure on a garment against the buyer&apos;s tolerance table in seconds, then feeds a live pass / fail dashboard. Faster decisions, reliable results, every single time.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link href="/contact" className="cine-cta inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-petrol-950 transition-transform duration-200 hover:-translate-y-0.5">Book a demo <span aria-hidden>→</span></Link>
@@ -87,11 +130,33 @@ export default function MagicQCPage() {
           </div>
         </section>
 
-        {/* how it works */}
+        {/* core capabilities */}
         <section className="mx-auto max-w-[1240px] px-6 py-24 lg:py-32">
           <Reveal className="mx-auto max-w-2xl text-center">
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em]" style={{ color: "var(--kicker)" }}>How it works</p>
-            <h2 className="cine-systext mt-4 text-[clamp(1.9rem,3.4vw,2.9rem)] font-extrabold leading-[1.08] t-ink">Three seconds, every measure</h2>
+            <p className="font-mono text-[11px] uppercase tracking-[0.22em]" style={{ color: "var(--kicker)" }}>Core capabilities</p>
+            <h2 className="cine-systext mt-4 text-[clamp(1.9rem,3.4vw,2.9rem)] font-extrabold leading-[1.08] t-ink">Built for <span className="t-accent">excellence</span></h2>
+            <p className="mx-auto mt-4 max-w-xl text-base t-soft">A comprehensive quality assurance platform designed to streamline your inspection workflow from start to finish.</p>
+          </Reveal>
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {CAPS.map((cap, i) => (
+              <Reveal key={cap.t} delay={i * 70}>
+                <article className="cine-glass flex h-full flex-col rounded-2xl p-6">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl t-accent" style={{ background: "var(--panel)", border: "1px solid var(--border)" }}>
+                    <CapIcon name={cap.icon} />
+                  </span>
+                  <h3 className="cine-systext mt-5 text-lg font-bold t-ink">{cap.t}</h3>
+                  <p className="mt-2 text-sm t-soft">{cap.d}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        {/* how it works */}
+        <section className="mx-auto max-w-[1240px] px-6 pb-24 lg:pb-32">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <p className="font-mono text-[11px] uppercase tracking-[0.22em]" style={{ color: "var(--kicker)" }}>Simple workflow</p>
+            <h2 className="cine-systext mt-4 text-[clamp(1.9rem,3.4vw,2.9rem)] font-extrabold leading-[1.08] t-ink">Three steps to <span className="t-accent">perfect quality</span></h2>
           </Reveal>
           <Reveal y={34} className="mt-12">
             <div className="cine-stage overflow-hidden rounded-[20px] p-3">
@@ -147,6 +212,29 @@ export default function MagicQCPage() {
           </div>
         </section>
 
+        {/* measurement intelligence & enterprise reporting */}
+        <section className="border-y px-6 py-24 lg:py-32" style={{ borderColor: "var(--border)", background: "var(--panel)" }}>
+          <div className="mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+            <Reveal>
+              <p className="font-mono text-[11px] uppercase tracking-[0.22em]" style={{ color: "var(--kicker)" }}>Measurement intelligence</p>
+              <h2 className="cine-systext mt-4 text-[clamp(1.9rem,3.4vw,2.9rem)] font-extrabold leading-[1.08] t-ink">Enterprise reporting, end to end</h2>
+              <p className="mt-4 max-w-lg text-base t-soft">
+                Every measurement is logged, scored and traceable. Directors get production counters, defect trends and exportable reports across every station and facility, in real time.
+              </p>
+            </Reveal>
+            <Reveal y={30}>
+              <ul className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
+                {ENTERPRISE.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm t-soft">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0 t-accent"><path d="m5 12 5 5L20 7" /></svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </section>
+
         {/* the station — real photos */}
         <section className="mx-auto max-w-[1240px] px-6 py-24 lg:py-32">
           <Reveal className="mx-auto max-w-2xl text-center">
@@ -162,6 +250,30 @@ export default function MagicQCPage() {
             <Reveal delay={210}><img loading="lazy" decoding="async" src="/assets/magicqc/demo-group.webp" alt="MagicQC demonstration to a group" className="h-full w-full rounded-2xl object-cover" /></Reveal>
             <Reveal delay={280}><img loading="lazy" decoding="async" src="/assets/magicqc/demo-presenting.webp" alt="Robionix presenting the MagicQC station" className="h-full w-full rounded-2xl object-cover" /></Reveal>
           </div>
+        </section>
+
+        {/* the difference — manual vs MagicQC */}
+        <section className="mx-auto max-w-[1000px] px-6 py-24 lg:py-32">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <p className="font-mono text-[11px] uppercase tracking-[0.22em]" style={{ color: "var(--kicker)" }}>The difference</p>
+            <h2 className="cine-systext mt-4 text-[clamp(1.9rem,3.4vw,2.9rem)] font-extrabold leading-[1.08] t-ink">Manual measurement vs <span className="t-accent">MagicQC</span></h2>
+          </Reveal>
+          <Reveal y={30} className="mt-12">
+            <div className="cine-glass overflow-hidden rounded-2xl">
+              <div className="grid grid-cols-3 border-b" style={{ borderColor: "var(--border)" }}>
+                <span className="px-5 py-4 font-mono text-[10px] uppercase tracking-wider t-faint">Metric</span>
+                <span className="border-x px-5 py-4 text-center font-mono text-[10px] uppercase tracking-wider t-faint" style={{ borderColor: "var(--border)" }}>Traditional</span>
+                <span className="px-5 py-4 text-center font-mono text-[10px] font-bold uppercase tracking-wider t-accent">MagicQC</span>
+              </div>
+              {DIFF.map(([metric, old, neo]) => (
+                <div key={metric} className="grid grid-cols-3 border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
+                  <span className="px-5 py-4 text-sm font-semibold t-ink">{metric}</span>
+                  <span className="border-x px-5 py-4 text-center text-sm t-faint" style={{ borderColor: "var(--border)" }}>{old}</span>
+                  <span className="px-5 py-4 text-center text-sm font-medium text-[#34D399]">{neo}</span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </section>
 
         {/* buyers + POM table */}
@@ -212,8 +324,8 @@ export default function MagicQCPage() {
           <Reveal>
             <div className="cine-stage relative mx-auto max-w-[1000px] overflow-hidden rounded-[28px] px-8 py-16 text-center lg:py-20">
               <span aria-hidden className="pointer-events-none absolute -right-16 -top-12 h-64 w-64 rounded-full opacity-30" style={{ background: "radial-gradient(circle,var(--glow2),transparent 70%)" }} />
-              <h2 className="cine-systext relative mx-auto max-w-[18ch] text-[clamp(1.8rem,3.6vw,3rem)] font-extrabold leading-[1.06] t-ink">See MagicQC measure <span className="t-accent">your</span> garments</h2>
-              <p className="relative mx-auto mt-4 max-w-lg text-base t-soft">Bring a few pieces. We&apos;ll measure them live against your buyer&apos;s tolerances.</p>
+              <h2 className="cine-systext relative mx-auto max-w-[20ch] text-[clamp(1.8rem,3.6vw,3rem)] font-extrabold leading-[1.06] t-ink">Ready to elevate your <span className="t-accent">quality standards?</span></h2>
+              <p className="relative mx-auto mt-4 max-w-lg text-base t-soft">Join industry leaders who trust intelligent automation for precision quality verification. Bring a few pieces and we&apos;ll measure them live against your buyer&apos;s tolerances.</p>
               <Link href="/contact" className="cine-cta relative mt-8 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-petrol-950 transition-transform duration-200 hover:-translate-y-0.5">Book a demo <span aria-hidden>→</span></Link>
             </div>
           </Reveal>

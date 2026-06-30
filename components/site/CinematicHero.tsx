@@ -205,9 +205,9 @@ export default function CinematicHero() {
               <span className="font-mono text-[10px] uppercase tracking-widest t-ink">CV measuring</span>
             </div>
             <div className="cine-badge cine-init cine-glass absolute -right-5 -top-6 z-40 hidden rounded-xl px-4 py-3 text-left md:block lg:-right-12" style={{ transform: "translateZ(90px)" }}>
-              <p className="font-mono text-[10px] uppercase tracking-wider t-faint">Per piece</p>
-              <p className="text-lg font-semibold t-ink">~3<span className="text-sm font-normal t-soft">s</span></p>
-              <p className="font-mono text-[9px] uppercase tracking-wider text-[#34D399]">vs ~90s manual</p>
+              <p className="font-mono text-[10px] uppercase tracking-wider t-faint">Throughput</p>
+              <p className="text-lg font-semibold t-ink">10<span className="text-sm font-normal t-soft">x</span></p>
+              <p className="font-mono text-[9px] uppercase tracking-wider text-[#34D399]">faster than manual</p>
             </div>
             <div className="cine-badge cine-init cine-glass absolute -bottom-7 -right-4 z-40 flex items-center gap-1.5 rounded-xl px-3 py-2 lg:-right-10" style={{ transform: "translateZ(80px)" }}>
               <span className="font-mono text-sm font-bold text-[#34D399]">✓ 6/6</span>

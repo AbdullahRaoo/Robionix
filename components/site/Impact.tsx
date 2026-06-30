@@ -18,7 +18,7 @@ export default function Impact() {
         </Reveal>
 
         <div className="mt-14">
-          <StatBand stats={[["$17.85B", "textile exports / yr"], ["~60%", "of national exports"], ["100% QC", "vs sample inspection"], ["~3s", "per piece, not 90"]]} />
+          <StatBand stats={[["$17.85B", "textile exports / yr"], ["~60%", "of national exports"], ["10x", "faster than manual"], ["99%", "measurement accuracy"]]} />
         </div>
 
         <Reveal className="mt-10 text-center">

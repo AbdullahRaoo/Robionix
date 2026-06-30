@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 type Case = { tag: string; title: string; take: string; img: string; href: string; featured?: boolean };
 
 const CASES: Case[] = [
-  { tag: "Case study · Vision AI", title: "From a tape measure to computer vision", take: "How MagicQC replaced manual, sample-based garment QC with 100% piece-level measurement at roughly three seconds each.", img: "/assets/magicqc/operator-panel.webp", href: "/magicqc", featured: true },
+  { tag: "Case study · Vision AI", title: "From a tape measure to computer vision", take: "How MagicQC replaced manual, sample-based garment QC with 100% piece-level measurement to sub-millimeter precision, 10x faster than a tape measure.", img: "/assets/magicqc/operator-panel.webp", href: "/magicqc", featured: true },
   { tag: "Case study · ERP", title: "A knitting ERP, built on the floor in Faisalabad", take: "Why KMES was developed alongside a working knitwear exporter, and what 'knitting-specific' really means.", img: "/assets/work/kmes.webp", href: "/products/kmes" },
   { tag: "Case study · Vision AI", title: "Turning thousands of race photos into a searchable archive", take: "Inside the YOLO + OCR pipeline that sorts marathon images by bib number in minutes.", img: "/assets/work/bib-recognition.webp", href: "/products/bib-recognition" },
   { tag: "Perspective", title: "Keeping the export bill in-country", take: "Textiles are roughly 60% of Pakistan's exports. The case for replacing imported ERP with a local manufacturing system.", img: "/assets/video/rmes-poster.webp", href: "/products/rmes" },

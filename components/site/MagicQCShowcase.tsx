@@ -1,16 +1,16 @@
 import Reveal from "./Reveal";
 
 const STEPS = [
-  { n: "01", title: "Lay the piece flat", body: "An operator places the garment on the lit measurement bed. No rulers, no manual marking." },
-  { n: "02", title: "Vision measures every POM", body: "The overhead rig reads all points of measure against the buyer's tolerance table, live, in about three seconds." },
-  { n: "03", title: "Pass / fail to the dashboard", body: "Each piece flows to the director's analytics dashboard: pass rate, per-operator and per-article, in real time." },
+  { n: "01", title: "Capture", body: "An operator places the garment on the lit measurement bed and the system captures a high-resolution image automatically. No rulers, no manual marking." },
+  { n: "02", title: "Measure", body: "Intelligent vision reads every point of measure against the buyer's tolerance table, live, in seconds." },
+  { n: "03", title: "Report", body: "Each piece flows to the director's analytics dashboard with instant pass / fail, per-operator and per-article, in real time." },
 ];
 
 const STATS = [
-  { v: "~3s", l: "per piece" },
-  { v: "6–8", l: "POMs / article" },
-  { v: "100%", l: "pieces logged" },
-  { v: "5+", l: "buyer profiles" },
+  { v: "99%", l: "measurement accuracy" },
+  { v: "10x", l: "faster than manual" },
+  { v: "±1 mm", l: "precision" },
+  { v: "500+", l: "inspections daily" },
 ];
 
 export default function MagicQCShowcase() {
