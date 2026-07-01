@@ -6,7 +6,7 @@ import Reveal from "@/components/site/Reveal";
 import { CTA } from "@/components/site/blocks";
 
 export const metadata: Metadata = {
-  title: "Insights & case studies — Robionix",
+  title: "Insights & case studies | Robionix",
   description: "How Robionix builds vision-driven automation: field notes and case studies from real deployments in apparel, knitwear and road safety.",
 };
 

@@ -6,7 +6,7 @@ import Reveal from "@/components/site/Reveal";
 import VideoFrame from "@/components/site/VideoFrame";
 
 export const metadata: Metadata = {
-  title: "MagicQC — AI garment size measurement | Robionix",
+  title: "MagicQC: AI garment size measurement | Robionix",
   description:
     "MagicQC is an AI-based automated garment size-measurement system. Advanced vision intelligence reads every point-of-measure against the buyer's tolerance to sub-millimeter precision in seconds, then feeds a live pass/fail dashboard with enterprise reporting.",
 };
@@ -235,7 +235,7 @@ export default function MagicQCPage() {
           </div>
         </section>
 
-        {/* the station — real photos */}
+        {/* the station: real photos */}
         <section className="mx-auto max-w-[1240px] px-6 py-24 lg:py-32">
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="font-mono text-[11px] uppercase tracking-[0.22em]" style={{ color: "var(--kicker)" }}>Production-ready</p>
@@ -252,7 +252,7 @@ export default function MagicQCPage() {
           </div>
         </section>
 
-        {/* the difference — manual vs MagicQC */}
+        {/* the difference: manual vs MagicQC */}
         <section className="mx-auto max-w-[1000px] px-6 py-24 lg:py-32">
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="font-mono text-[11px] uppercase tracking-[0.22em]" style={{ color: "var(--kicker)" }}>The difference</p>

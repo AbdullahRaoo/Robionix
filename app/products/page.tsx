@@ -6,7 +6,7 @@ import Reveal from "@/components/site/Reveal";
 import { CTA } from "@/components/site/blocks";
 
 export const metadata: Metadata = {
-  title: "Products — Robionix Technologies",
+  title: "Products | Robionix Technologies",
   description: "MagicQC AI garment measurement, RMES and KMES manufacturing ERP, AI bib recognition, and the Smart Helmet. Systems Robionix has shipped onto real factory floors.",
 };
 

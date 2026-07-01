@@ -6,7 +6,7 @@ import Reveal from "@/components/site/Reveal";
 import { Section, Heading, FeatureGrid, FlowDiagram, StatBand, SpecRows, CTA } from "@/components/site/blocks";
 
 export const metadata: Metadata = {
-  title: "Bib Recognition & Image Segregation — AI for race photos | Robionix",
+  title: "Bib Recognition & Image Segregation: AI for race photos | Robionix",
   description: "AI that detects marathon runners' bib numbers and auto-sorts thousands of race photos in minutes, built on YOLO object detection and Tesseract OCR.",
 };
 

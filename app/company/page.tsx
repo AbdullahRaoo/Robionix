@@ -6,7 +6,7 @@ import ContactCTA from "@/components/site/ContactCTA";
 import Reveal from "@/components/site/Reveal";
 
 export const metadata: Metadata = {
-  title: "Company — Robionix Technologies",
+  title: "Company | Robionix Technologies",
   description: "An emerging Pakistani deep-tech company building hardware and software automation for manufacturing, born at NUTECH, Islamabad.",
 };
 

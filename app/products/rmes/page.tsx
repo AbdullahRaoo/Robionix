@@ -7,7 +7,7 @@ import VideoFrame from "@/components/site/VideoFrame";
 import { Section, Heading, FeatureGrid, FlowDiagram, SpecRows, StatBand, CheckList, CTA } from "@/components/site/blocks";
 
 export const metadata: Metadata = {
-  title: "RMES — Robionix Manufacturing Execution System | Robionix",
+  title: "RMES: Robionix Manufacturing Execution System | Robionix",
   description: "RMES is an industrial manufacturing ERP that replaces SAP, Oracle and Dynamics for Pakistan's textile, knitwear, sports and surgical plants, from purchase order to final delivery.",
 };
 

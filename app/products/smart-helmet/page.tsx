@@ -7,7 +7,7 @@ import VideoFrame from "@/components/site/VideoFrame";
 import { Section, Heading, FeatureGrid, FlowDiagram, SpecRows, CTA } from "@/components/site/blocks";
 
 export const metadata: Metadata = {
-  title: "Smart Helmet — IoT rider safety | Robionix",
+  title: "Smart Helmet: IoT rider safety | Robionix",
   description: "An IoT smart helmet that won't let the bike start unless it's worn, senses over-speeding, and sends accident location alerts to an emergency contact. Developed with NUTECH.",
 };
 

@@ -5,7 +5,7 @@ import Reveal from "@/components/site/Reveal";
 import { Section, Heading, FeatureGrid, CTA } from "@/components/site/blocks";
 
 export const metadata: Metadata = {
-  title: "Careers — Robionix Technologies",
+  title: "Careers | Robionix Technologies",
   description: "Build vision AI, robotics, embedded systems and manufacturing ERP that automate Pakistan's industry. Join the Robionix engineering team at NUTECH, Islamabad.",
 };
 

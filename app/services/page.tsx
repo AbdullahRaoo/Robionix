@@ -7,7 +7,7 @@ import { Steps, CTA } from "@/components/site/blocks";
 import { SERVICES } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: "Services — Vision AI, ERP, Robotics, Embedded | Robionix",
+  title: "Services: Vision AI, ERP, Robotics, Embedded | Robionix",
   description: "Robionix capabilities, end to end: computer vision, ERP development, robotics and automation, embedded systems, industrial automation and VR.",
 };
 

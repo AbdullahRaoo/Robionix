@@ -14,8 +14,8 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const s = getService(slug);
-  if (!s) return { title: "Services — Robionix" };
-  return { title: `${s.name} — ${s.tagline} | Robionix`, description: s.intro };
+  if (!s) return { title: "Services | Robionix" };
+  return { title: `${s.name}: ${s.tagline} | Robionix`, description: s.intro };
 }
 
 function TechMotif() {

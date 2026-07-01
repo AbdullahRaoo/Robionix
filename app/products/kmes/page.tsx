@@ -6,7 +6,7 @@ import Reveal from "@/components/site/Reveal";
 import { Section, Heading, FeatureGrid, FlowDiagram, CheckList, CTA } from "@/components/site/blocks";
 
 export const metadata: Metadata = {
-  title: "KMES — Knitting Manufacturing Execution System | Robionix",
+  title: "KMES: Knitting Manufacturing Execution System | Robionix",
   description: "KMES is a knitting-specific ERP that automates a knitwear plant from yarn purchase to finished article, developed with a Faisalabad knitwear exporter.",
 };
 

@@ -12,12 +12,12 @@ const DESC = "Robionix engineers the systems that see, measure, and run modern f
 export const metadata: Metadata = {
   metadataBase: new URL("https://robionix.com"),
   title: {
-    default: "Robionix Technologies — Vision-driven automation for the factory floor",
+    default: "Robionix Technologies | Vision-driven automation for the factory floor",
     template: "%s",
   },
   description: DESC,
   openGraph: {
-    title: "Robionix Technologies — Vision-driven automation for the factory floor",
+    title: "Robionix Technologies | Vision-driven automation for the factory floor",
     description: DESC,
     url: "/",
     siteName: "Robionix Technologies",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Robionix Technologies — Vision-driven automation for the factory floor",
+    title: "Robionix Technologies | Vision-driven automation for the factory floor",
     description: DESC,
     images: ["/og.png"],
   },

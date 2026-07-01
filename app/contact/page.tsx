@@ -5,7 +5,7 @@ import Reveal from "@/components/site/Reveal";
 import ContactForm from "@/components/site/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact — Robionix Technologies",
+  title: "Contact | Robionix Technologies",
   description: "Talk to Robionix about vision QC, MagicQC, or a full manufacturing ERP. Based at NUTECH, Islamabad.",
 };
 
