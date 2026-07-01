@@ -1,0 +1,6 @@
+# Keep Linux/Docker-bound files as LF regardless of the checkout platform.
+* text=auto
+Dockerfile text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.sh text eol=lf

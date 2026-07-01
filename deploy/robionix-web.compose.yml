@@ -1,0 +1,36 @@
+# Robionix Next.js site, deployed alongside the existing WordPress stack.
+# It joins the SAME docker network as robionix_nginx so nginx can reach it by
+# name (robionix_web:3000). The old WordPress stack is left untouched; to go
+# live we only repoint robionix.conf's proxy_pass to robionix_web:3000, and to
+# roll back we point it back at wordpress:80.
+#
+# Usage (run from this deploy/ directory on the server):
+#   docker compose -f robionix-web.compose.yml up -d --build
+#   docker compose -f robionix-web.compose.yml logs -f
+#
+# Requires a sibling .env file (not committed) holding RESEND_API_KEY and CONTACT_TO.
+
+name: robionix-web
+
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    image: robionix-web:latest
+    container_name: robionix_web
+    restart: always
+    env_file:
+      - ./.env
+    environment:
+      - NODE_ENV=production
+    expose:
+      - "3000"
+    networks:
+      - web_network
+
+networks:
+  # The external network that robionix_nginx is attached to.
+  web_network:
+    external: true
+    name: robionix_wordpress_network
